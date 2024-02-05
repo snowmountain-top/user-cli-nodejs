@@ -16,7 +16,7 @@ export async function callApi<T extends (args: any) => Promise<any>>(url: string
 
   while (retries < maxRetries) {
     try {
-      console.info(`准备发起ROS请求[${requestId}]: ${url}, 参数: ${JSON.stringify(request)}`);
+      console.info(`准备发起USER请求[${requestId}]: ${url}, 参数: ${JSON.stringify(request)}`);
       const response = await axios.post(url, request[0], {
         headers: {
           'X-Request-Id': requestId
@@ -27,7 +27,7 @@ export async function callApi<T extends (args: any) => Promise<any>>(url: string
       const responseData = response.data as ResponseData
       return responseData.data
     } catch (error: any) {
-      console.error(`ROS请求失败[${requestId}]: ${error.message}`)
+      console.error(`USER请求失败[${requestId}]: ${error.message}`)
       errorInfo = error
       const axiosError = error as AxiosError
       const ErrorClass = axiosError.response
@@ -38,7 +38,7 @@ export async function callApi<T extends (args: any) => Promise<any>>(url: string
       if (axiosError.response) {
         const response = axiosError.response
         const data = response.data as ResponseData
-        console.error(`ROS 异常: ${axiosError.message},requestId: ${requestId}`)
+        console.error(`USER 异常: ${axiosError.message},requestId: ${requestId}`)
         console.info('响应信息', data.message)
         console.info('响应信息Data', JSON.stringify(data))
         console.error('异常堆栈', JSON.stringify(error.stack))
@@ -49,7 +49,7 @@ export async function callApi<T extends (args: any) => Promise<any>>(url: string
           throw new ErrorClass(data.message || 'Ros Error', response.status)
         }
       }
-      console.error(`ROS 未知异常: ${axiosError.message}`, error.stack)
+      console.error(`USER 未知异常: ${axiosError.message}`, error.stack)
       if (retries === maxRetries) {
         throw error
       }
