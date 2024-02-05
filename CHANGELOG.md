@@ -1,6 +1,8 @@
 # 更新日志 
 
 
+### [1.0.1](https://github.com/snowmountain-top/user-cli-nodejs/compare/v1.0.0...v1.0.1) (2024-02-05)
+
 ## 1.0.0 (2024-02-05)
 
 ### [0.0.64](https://github.com/snowmountain-top/ros-cli-nodejs/compare/v0.0.63...v0.0.64) (2024-01-17)
