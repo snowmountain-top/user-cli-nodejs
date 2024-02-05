@@ -1,0 +1,15 @@
+{
+  "entryPoints": [
+    "src/index.ts",
+  ],
+  "out": "./docs",
+  "readme": "./README.md",
+  "includeVersion": true,
+  "disableSources": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "tsconfig": "./tsconfig.json",
+  "plugin": [
+    "typedoc-plugin-missing-exports"
+  ]
+}
