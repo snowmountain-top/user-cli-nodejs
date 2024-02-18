@@ -14,7 +14,9 @@ class CreditService extends BaseService implements Service.CreditController {
   getCreditReduce(request: any): Promise<any> {
     return callApi<Service.CreditController['getCreditReduce']>(this.getApiUrl(this.getCreditReduce), request)
   }
-
+  grantPrepareCredit(request: any): Promise<any> {
+    return callApi<Service.CreditController['grantPrepareCredit']>(this.getApiUrl(this.grantPrepareCredit), request)
+  }
 }
 
 

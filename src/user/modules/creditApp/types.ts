@@ -41,29 +41,17 @@ export namespace Service {
       unionId: string
     }
 
+    export interface GrantPrepareCreditParam {
+      /** 来源id */
+      sourceId: string
+    }
   }
 
   export namespace Response {
-    export interface orderCreate {
-      /** 订单Id */
-      tradeOrderId: string,
-      /** 是否是微信渠道交易 */
-      isWxChannelTrade: boolean,
-      /** 微信支付参数 */
-      wxPaymentParam: {
-        /** appId */
-        appId: string,
-        /** 支付时间戳 */
-        timeStamp: string,
-        /** 随机字符串 */
-        nonceStr: string,
-        /** 订单详情扩展字符串 */
-        package: string,
-        /** 签名类型 */
-        signType: string,
-        /** 支付签名 */
-        paySign: string
-      }
+    export interface GrantPrepareCreditRes {
+      credit: number
+      reduce: number
+      reason: string
     }
   }
 
@@ -83,5 +71,11 @@ export namespace Service {
      * @path /credit/get-credit-reduce
      */
     getCreditReduce(request:Service.Request.GetCreditReduceParam): Promise<number>
+    /**
+     * 发放预发放的积分
+     * @path /credit/grant-prepare-credit
+     */
+    grantPrepareCredit(request:Service.Request.GrantPrepareCreditParam): Promise<Service.Response.GrantPrepareCreditRes>
+
   }
 }
