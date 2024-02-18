@@ -51,7 +51,7 @@ export namespace Service {
     export interface GrantPrepareCreditRes {
       credit: number
       reduce: number
-      reason: string
+      reason: string[]
     }
   }
 
