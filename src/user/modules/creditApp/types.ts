@@ -1,5 +1,4 @@
 import {USER} from "../../../types";
-import { CreditAccountSourceTypeEnum } from 'vitality-meta/enums/user'
 
 export namespace Service {
   export namespace Request {
@@ -10,7 +9,7 @@ export namespace Service {
       /** 状态 */
       status: USER.Constants.CreditRecordStatusEnum
       /** 来源类型 */
-      sourceType: typeof CreditAccountSourceTypeEnum
+      sourceType: string
       /** 来源id */
       sourceId: string
       /** 积分数量 */
@@ -18,14 +17,14 @@ export namespace Service {
       /** 标题 */
       title: string
       /** 内容 */
-      content: string
+      content: string[]
     }
 
     export interface DeductCreditParam {
       /** 用户id */
       unionId: string
       /** 来源类型 */
-      sourceType: typeof CreditAccountSourceTypeEnum
+      sourceType: string
       /** 来源id */
       sourceId: string
       /** 积分数量 */
@@ -33,7 +32,7 @@ export namespace Service {
       /** 标题 */
       title: string
       /** 内容 */
-      content: string
+      content: string[]
     }
 
     export interface GetCreditReduceParam {
