@@ -54,6 +54,10 @@ export namespace Service {
       /** 积分 */
       credit: number
     }
+    export interface QueryCreditRecordParam {
+      /** unionId */
+      unionId: string
+    }
   }
 
   export namespace Response {
@@ -93,8 +97,14 @@ export namespace Service {
 
     /**
      * 更新预发放的积分
-     * @path /credit/cancel-prepare-credit
+     * @path /credit/update-prepare-credit
      */
     updatePrepareCredit(request:Service.Request.UpdatePrepareCreditParam): Promise<void>
+
+    /**
+     * 查询积分记录
+     * @path /credit/query-credit-record
+     */
+    queryCreditRecord(request:Service.Request.QueryCreditRecordParam): Promise<void>
   }
 }
