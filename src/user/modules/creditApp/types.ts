@@ -44,6 +44,10 @@ export namespace Service {
       /** 来源id */
       sourceId: string
     }
+    export interface CancelPrepareCreditParam {
+      /** 来源id */
+      sourceId: string
+    }
   }
 
   export namespace Response {
@@ -75,6 +79,10 @@ export namespace Service {
      * @path /credit/grant-prepare-credit
      */
     grantPrepareCredit(request:Service.Request.GrantPrepareCreditParam): Promise<Service.Response.GrantPrepareCreditRes>
-
+    /**
+     * 取消预发放的积分
+     * @path /credit/cancel-prepare-credit
+     */
+    cancelPrepareCredit(request:Service.Request.CancelPrepareCreditParam): Promise<void>
   }
 }
