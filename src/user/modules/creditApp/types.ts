@@ -126,6 +126,6 @@ export namespace Service {
      * 查询积分记录
      * @path /credit/query-credit-record
      */
-    queryCreditRecord(request:Service.Request.QueryCreditRecordParam): Promise<Service.Response.CreditRecordDTO>
+    queryCreditRecord(request:Service.Request.QueryCreditRecordParam): Promise<Service.Response.CreditRecordDTO[]>
   }
 }
