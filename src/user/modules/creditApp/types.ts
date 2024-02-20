@@ -64,7 +64,8 @@ export namespace Service {
       /** 创建时间结束*/
       createTimeEnd?: number
       sort?: {
-        createTime: 'ASC' | 'DESC'
+        createTime?: 'ASC' | 'DESC'
+        updateTime?: 'ASC' | 'DESC'
       }
     }
 
