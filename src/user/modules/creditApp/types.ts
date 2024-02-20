@@ -65,7 +65,7 @@ export namespace Service {
       createTimeEnd?: number
     }
 
-    export interface queryCreditAccountPoolParam {
+    export interface QueryCreditAccountPoolParam {
       /** unionId */
       unionId: string
       /** 开始时间 */
@@ -76,6 +76,11 @@ export namespace Service {
       expireTimeStart?: number
       /** 过期时间结束 */
       expireTimeEnd?: number
+    }
+
+    export interface GetCreditRecordParam {
+      /** unionId */
+      unionId: string
     }
   }
 
@@ -110,6 +115,21 @@ export namespace Service {
       expireTime: number
       updateTime: number
       createTime: number
+    }
+
+    export interface CreditRecordFacadeDTO {
+      income: {
+        title: string
+        content: string[]
+        credit: number
+        time: string
+      }[]
+      expenditure: {
+        title: string
+        content: string[]
+        credit: number
+        time: string
+      }[]
     }
   }
 
@@ -156,6 +176,14 @@ export namespace Service {
      * 查询积分池
      * @path /credit/query-credit-account-pool
      */
-    queryCreditAccountPool(request:Service.Request.queryCreditAccountPoolParam): Promise<Service.Response.CreditAccountPoolDTO[]>
+    queryCreditAccountPool(request:Service.Request.QueryCreditAccountPoolParam): Promise<Service.Response.CreditAccountPoolDTO[]>
+  }
+
+  export interface CreditFacadeController {
+    /**
+     * 前端获取用户积分流水
+     * @path /credit/getCreditRecord
+     */
+    getCreditRecord(request:Service.Request.GetCreditRecordParam): Promise<Service.Response.CreditRecordFacadeDTO>
   }
 }
