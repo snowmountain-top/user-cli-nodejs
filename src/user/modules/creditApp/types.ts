@@ -122,18 +122,21 @@ export namespace Service {
     }
 
     export interface CreditRecordFacadeDTO {
-      income: {
-        title: string
-        content: string[]
-        credit: number
-        time: string
-      }[]
-      expenditure: {
-        title: string
-        content: string[]
-        credit: number
-        time: string
-      }[]
+      income: CreditRecordIncomeDTO[]
+      expenditure: CreditRecordExpenditureDTO[]
+    }
+
+    export interface CreditRecordIncomeDTO {
+      title: string
+      content: string[]
+      credit: number
+      time: string
+    }
+    export interface CreditRecordExpenditureDTO {
+      title: string
+      content: string[]
+      credit: number
+      time: string
     }
   }
 
