@@ -91,6 +91,19 @@ export namespace Service {
       /** unionId */
       unionId: string
     }
+
+    export interface ListUserBasicInfoParam {
+      id: string
+      unionId: string
+      avatar: string
+      nickName: string
+      mobile: string
+      realName: string
+      isDefault: boolean
+      riskRankLevel: number
+      type: string
+      birthday: number
+    }
   }
 
   export namespace Response {
@@ -124,6 +137,21 @@ export namespace Service {
       expireTime: number
       updateTime: number
       createTime: number
+    }
+
+    export interface UserBasicInfoDTO{
+      id: string
+      unionId: string
+      avatar: string
+      nickName: string
+      mobile: string
+      realName: string
+      isDefault: boolean
+      riskRankLevel: number
+      type: string
+      birthday: number
+      createTime: number
+      updateTime: number
     }
 
     export interface CreditRecordFacadeDTO {
@@ -189,6 +217,14 @@ export namespace Service {
      * @path /credit/query-credit-account-pool
      */
     queryCreditAccountPool(request:Service.Request.QueryCreditAccountPoolParam): Promise<Service.Response.CreditAccountPoolDTO[]>
+  }
+
+  export interface UserController {
+    /**
+     * 查询用户列表
+     * @path /user/list-user-basic-info
+     */
+    listUserBasicInfo(request:Service.Request.ListUserBasicInfoParam): Promise<Service.Response.UserBasicInfoDTO[]>
   }
 
   export interface CreditFacadeController {
