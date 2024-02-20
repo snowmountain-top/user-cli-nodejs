@@ -58,9 +58,9 @@ export namespace Service {
       /** unionId */
       unionId: string
       /** operation */
-      operation: USER.Constants.OperationEnum
+      operation?: USER.Constants.OperationEnum
       /** 状态 */
-      status: USER.Constants.CreditRecordStatusEnum
+      status?: USER.Constants.CreditRecordStatusEnum
       /** 来源类型 */
       sourceType?: string
       /** 创建时间开始 */
