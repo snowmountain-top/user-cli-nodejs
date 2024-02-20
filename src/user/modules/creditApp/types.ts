@@ -72,6 +72,10 @@ export namespace Service {
       startTime?: string
       /** 过期时间 */
       expireTime?: number
+      /** 过期时间开始 */
+      expireTimeStart?: number
+      /** 过期时间结束 */
+      expireTimeEnd?: number
     }
   }
 
