@@ -86,6 +86,11 @@ export namespace Service {
       /** unionId */
       unionId: string
     }
+
+    export interface GetMoneyDeductionFromCoinParam {
+      /** unionId */
+      unionId: string
+    }
   }
 
   export namespace Response {
@@ -128,13 +133,13 @@ export namespace Service {
 
     export interface CreditRecordIncomeDTO {
       title: string
-      content: string[]
+      content: string
       credit: number
       time: string
     }
     export interface CreditRecordExpenditureDTO {
       title: string
-      content: string[]
+      content: string
       credit: number
       time: string
     }
@@ -189,8 +194,15 @@ export namespace Service {
   export interface CreditFacadeController {
     /**
      * 前端获取用户积分流水
-     * @path /credit/getCreditRecord
+     * @path /credit/facade/get-credit-record
      */
     getCreditRecord(request:Service.Request.GetCreditRecordParam): Promise<Service.Response.CreditRecordFacadeDTO>
+
+    /**
+     * 查询金币已抵扣的金额
+     * @path /credit/facade/get-money-deduction-from-coin
+     */
+    getMoneyDeductionFromCoin(request:Service.Request.GetMoneyDeductionFromCoinParam): Promise<number>
+
   }
 }
