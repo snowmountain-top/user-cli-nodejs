@@ -72,6 +72,21 @@ export namespace Service {
       reduce: number
       reason: string[]
     }
+    export interface CreditRecordDTO {
+      id:string
+      extraInfo: { [key: string]: number }
+      content: string[]
+      title: string
+      credit: number
+      sourceId: string
+      sourceType: string
+      ownerId: string
+      status: USER.Constants.CreditRecordStatusEnum
+      operation: USER.Constants.OperationEnum
+      expireTime: number
+      updateTime: number
+      createTime: number
+    }
   }
 
   export interface CreditController {
@@ -111,6 +126,6 @@ export namespace Service {
      * 查询积分记录
      * @path /credit/query-credit-record
      */
-    queryCreditRecord(request:Service.Request.QueryCreditRecordParam): Promise<void>
+    queryCreditRecord(request:Service.Request.QueryCreditRecordParam): Promise<Service.Response.CreditRecordDTO>
   }
 }
