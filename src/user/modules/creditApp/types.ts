@@ -64,6 +64,15 @@ export namespace Service {
       /** 创建时间结束*/
       createTimeEnd: number
     }
+
+    export interface queryCreditAccountPoolParam {
+      /** unionId */
+      unionId: string
+      /** 开始时间 */
+      startTime?: string
+      /** 过期时间 */
+      expireTime?: number
+    }
   }
 
   export namespace Response {
@@ -83,6 +92,17 @@ export namespace Service {
       ownerId: string
       status: USER.Constants.CreditRecordStatusEnum
       operation: USER.Constants.OperationEnum
+      expireTime: number
+      updateTime: number
+      createTime: number
+    }
+
+    export interface CreditAccountPoolDTO {
+      id:string
+      isConsumed: boolean
+      remainCredit: number
+      totalCredit: number
+      ownerId: string
       expireTime: number
       updateTime: number
       createTime: number
@@ -127,5 +147,11 @@ export namespace Service {
      * @path /credit/query-credit-record
      */
     queryCreditRecord(request:Service.Request.QueryCreditRecordParam): Promise<Service.Response.CreditRecordDTO[]>
+
+    /**
+     * 查询积分池
+     * @path /credit/query-credit-account-pool
+     */
+    queryCreditAccountPool(request:Service.Request.queryCreditAccountPoolParam): Promise<Service.Response.CreditAccountPoolDTO[]>
   }
 }

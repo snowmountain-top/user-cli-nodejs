@@ -26,6 +26,9 @@ class CreditService extends BaseService implements Service.CreditController {
   queryCreditRecord(request: any): Promise<any> {
     return callApi<Service.CreditController['queryCreditRecord']>(this.getApiUrl(this.queryCreditRecord), request)
   }
+  queryCreditAccountPool(request: any): Promise<any> {
+    return callApi<Service.CreditController['queryCreditAccountPool']>(this.getApiUrl(this.queryCreditAccountPool), request)
+  }
 }
 
 
