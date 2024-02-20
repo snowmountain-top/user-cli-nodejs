@@ -67,10 +67,6 @@ export namespace Service {
       createTimeStart?: number
       /** 创建时间结束*/
       createTimeEnd?: number
-      sort?: {
-        createTime?: 'ASC' | 'DESC'
-        updateTime?: 'ASC' | 'DESC'
-      }
     }
 
     export interface QueryCreditAccountPoolParam {
