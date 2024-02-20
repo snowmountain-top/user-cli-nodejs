@@ -22,17 +22,17 @@ export namespace Service {
 
     export interface DeductCreditParam {
       /** 用户id */
-      unionId: string
+      unionId?: string
       /** 来源类型 */
-      sourceType: string
+      sourceType?: string
       /** 来源id */
-      sourceId: string
+      sourceId?: string
       /** 积分数量 */
-      credit: number
+      credit?: number
       /** 标题 */
-      title: string
+      title?: string
       /** 内容 */
-      content: string[]
+      content?: string[]
     }
 
     export interface GetCreditReduceParam {
@@ -56,7 +56,7 @@ export namespace Service {
     }
     export interface QueryCreditRecordParam {
       /** unionId */
-      unionId: string
+      unionId?: string
       /** operation */
       operation?: USER.Constants.OperationEnum
       /** 状态 */
@@ -71,7 +71,7 @@ export namespace Service {
 
     export interface QueryCreditAccountPoolParam {
       /** unionId */
-      unionId: string
+      unionId?: string
       /** 开始时间 */
       startTime?: string
       /** 过期时间 */
@@ -93,16 +93,16 @@ export namespace Service {
     }
 
     export interface ListUserBasicInfoParam {
-      id: string
-      unionId: string
-      avatar: string
-      nickName: string
-      mobile: string
-      realName: string
-      isDefault: boolean
-      riskRankLevel: number
-      type: string
-      birthday: number
+      id?: string
+      unionId?: string
+      avatar?: string
+      nickName?: string
+      mobile?: string
+      realName?: string
+      isDefault?: boolean
+      riskRankLevel?: number
+      type?: string
+      birthday?: number
     }
   }
 
