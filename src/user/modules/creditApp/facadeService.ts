@@ -2,14 +2,14 @@ import { callApi } from '../../http'
 import BaseService from '../service'
 import {Service} from "./types";
 
-class CreditFacadeService extends BaseService implements Service.CreditFacadeController {
-  protected prefixUrl: string = '/credit/facade'
+class CreditFacadeService extends BaseService implements Service.FacadeController {
+  protected prefixUrl: string = '/facade'
 
   getCreditRecord(request: any): Promise<any> {
-    return callApi<Service.CreditFacadeController['getCreditRecord']>(this.getApiUrl(this.getCreditRecord), request)
+    return callApi<Service.FacadeController['getCreditRecord']>(this.getApiUrl(this.getCreditRecord), request)
   }
   getMoneyDeductionFromCoin(request: any): Promise<any> {
-    return callApi<Service.CreditFacadeController['getMoneyDeductionFromCoin']>(this.getApiUrl(this.getMoneyDeductionFromCoin), request)
+    return callApi<Service.FacadeController['getMoneyDeductionFromCoin']>(this.getApiUrl(this.getMoneyDeductionFromCoin), request)
   }
 }
 

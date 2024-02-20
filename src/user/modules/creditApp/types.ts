@@ -227,7 +227,7 @@ export namespace Service {
     listUserBasicInfo(request:Service.Request.ListUserBasicInfoParam): Promise<Service.Response.UserBasicInfoDTO[]>
   }
 
-  export interface CreditFacadeController {
+  export interface FacadeController {
     /**
      * 前端获取用户积分流水
      * @path /credit/facade/get-credit-record
