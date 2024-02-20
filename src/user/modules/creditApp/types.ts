@@ -57,6 +57,12 @@ export namespace Service {
     export interface QueryCreditRecordParam {
       /** unionId */
       unionId: string
+      /** 来源类型 */
+      sourceType: string
+      /** 创建时间开始 */
+      createTimeStart: number
+      /** 创建时间结束*/
+      createTimeEnd: number
     }
   }
 
