@@ -57,6 +57,10 @@ export namespace Service {
     export interface QueryCreditRecordParam {
       /** unionId */
       unionId: string
+      /** operation */
+      operation: USER.Constants.OperationEnum
+      /** 状态 */
+      status: USER.Constants.CreditRecordStatusEnum
       /** 来源类型 */
       sourceType?: string
       /** 创建时间开始 */
