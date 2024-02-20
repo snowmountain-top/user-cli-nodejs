@@ -104,6 +104,10 @@ export namespace Service {
       type?: string
       birthday?: number
     }
+
+    export interface GetByUnionIdParam {
+      unionId?: string
+    }
   }
 
   export namespace Response {
@@ -152,6 +156,23 @@ export namespace Service {
       birthday: number
       createTime: number
       updateTime: number
+    }
+
+    export interface UserInfoDTO{
+      userInfoDTO: UserBasicInfoDTO
+      userExtraInfoDTO: UserExtraInfoDTO
+    }
+
+    export interface UserExtraInfoDTO{
+      unionId: string
+      wxIdentityMap: string
+      certification: string
+      signInCoiledNum: number
+      coinRemain: number
+      createTime: number
+      updateTime: number
+      totalConsumeCnt: number
+      totalConsumeFee: number
     }
 
     export interface CreditRecordFacadeDTO {
@@ -225,6 +246,12 @@ export namespace Service {
      * @path /user/list-user-basic-info
      */
     listUserBasicInfo(request:Service.Request.ListUserBasicInfoParam): Promise<Service.Response.UserBasicInfoDTO[]>
+
+    /**
+     * 查询用户聚合
+     * @path /user/get-by-unionId
+     */
+    getByUnionId(request:Service.Request.GetByUnionIdParam): Promise<Service.Response.UserInfoDTO[]>
   }
 
   export interface FacadeController {

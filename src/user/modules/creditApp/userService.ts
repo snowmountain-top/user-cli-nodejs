@@ -8,6 +8,9 @@ class UserService extends BaseService implements Service.UserController {
   listUserBasicInfo(request: any): Promise<any> {
     return callApi<Service.UserController['listUserBasicInfo']>(this.getApiUrl(this.listUserBasicInfo), request)
   }
+  getByUnionId(request: any): Promise<any> {
+    return callApi<Service.UserController['getByUnionId']>(this.getApiUrl(this.getByUnionId), request)
+  }
 }
 
 
