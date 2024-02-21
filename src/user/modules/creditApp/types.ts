@@ -251,7 +251,7 @@ export namespace Service {
      * 查询用户聚合
      * @path /user/get-by-unionId
      */
-    getByUnionId(request:Service.Request.GetByUnionIdParam): Promise<Service.Response.UserInfoDTO[]>
+    getByUnionId(request:Service.Request.GetByUnionIdParam): Promise<Service.Response.UserInfoDTO>
   }
 
   export interface FacadeController {
