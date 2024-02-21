@@ -14,6 +14,9 @@ class CreditFacadeService extends BaseService implements Service.FacadeControlle
   bindUserMobile(request: any): Promise<any> {
     return callApi<Service.FacadeController['bindUserMobile']>(this.getApiUrl(this.bindUserMobile), request)
   }
+  updateUserType(request: any): Promise<any> {
+    return callApi<Service.FacadeController['updateUserType']>(this.getApiUrl(this.updateUserType), request)
+  }
 }
 
 

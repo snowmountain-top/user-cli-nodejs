@@ -99,6 +99,15 @@ export namespace Service {
       /** phoneNumber */
       phoneNumber: string
     }
+
+    export interface UpdateUserTypeParam {
+      /** unionId */
+      unionId: string
+      data: {
+        type: string
+      }
+    }
+
     export interface UpdateUserParam {
       userInfo?: UserBasicInfoDTO
       userExtraInfo?: UserExtraInfoDTO
@@ -118,9 +127,6 @@ export namespace Service {
     }
 
     export interface GetByUnionIdParam {
-      unionId?: string
-    }
-    export interface GetBeLinkOpenIdByUnionIdParam {
       unionId?: string
     }
   }
@@ -272,7 +278,7 @@ export namespace Service {
      * 查询用户共比邻小程序openId
      * @path /user/get-be-link-open-id-by-union-id
      */
-    getBeLinkOpenIdByUnionId(request:Service.Request.GetBeLinkOpenIdByUnionIdParam): Promise<string>
+    getBeLinkOpenIdByUnionId(request:Service.Request.GetByUnionIdParam): Promise<string>
   }
 
   export interface FacadeController {
@@ -293,6 +299,12 @@ export namespace Service {
      * @path /facade/bind-user-mobile
      */
     bindUserMobile(request:Service.Request.BindUserMobileParam): Promise<void>
+
+    /**
+     * 更新用户的员工身份
+     * @path /facade/update-user-type
+     */
+    updateUserType(request:Service.Request.UpdateUserTypeParam): Promise<void>
 
   }
 }
