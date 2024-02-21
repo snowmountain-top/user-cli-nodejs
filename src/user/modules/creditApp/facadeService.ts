@@ -11,6 +11,9 @@ class CreditFacadeService extends BaseService implements Service.FacadeControlle
   getMoneyDeductionFromCoin(request: any): Promise<any> {
     return callApi<Service.FacadeController['getMoneyDeductionFromCoin']>(this.getApiUrl(this.getMoneyDeductionFromCoin), request)
   }
+  bindUserMobile(request: any): Promise<any> {
+    return callApi<Service.FacadeController['bindUserMobile']>(this.getApiUrl(this.bindUserMobile), request)
+  }
 }
 
 

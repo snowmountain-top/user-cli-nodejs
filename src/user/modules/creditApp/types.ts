@@ -92,6 +92,11 @@ export namespace Service {
       unionId: string
     }
 
+    export interface BindUserMobileParam {
+      /** phoneNumber */
+      phoneNumber: string
+    }
+
     export interface ListUserBasicInfoParam {
       id?: string
       unionId?: string
@@ -257,15 +262,21 @@ export namespace Service {
   export interface FacadeController {
     /**
      * 前端获取用户积分流水
-     * @path /credit/facade/get-credit-record
+     * @path /facade/get-credit-record
      */
     getCreditRecord(request:Service.Request.GetCreditRecordParam): Promise<Service.Response.CreditRecordFacadeDTO>
 
     /**
      * 查询金币已抵扣的金额
-     * @path /credit/facade/get-money-deduction-from-coin
+     * @path /facade/get-money-deduction-from-coin
      */
     getMoneyDeductionFromCoin(request:Service.Request.GetMoneyDeductionFromCoinParam): Promise<number>
+
+    /**
+     * 根据用户授权存储用户手机号
+     * @path /facade/bind-user-mobile
+     */
+    bindUserMobile(request:Service.Request.BindUserMobileParam): Promise<void>
 
   }
 }
