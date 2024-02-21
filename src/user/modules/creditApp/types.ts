@@ -3,6 +3,9 @@ import {USER} from "../../../types";
 export namespace Service {
   export namespace Request {
 
+    import UserBasicInfoDTO = Service.Response.UserBasicInfoDTO;
+    import UserExtraInfoDTO = Service.Response.UserExtraInfoDTO;
+
     export interface AddCreditParam {
       /** 用户id */
       unionId: string
@@ -96,6 +99,10 @@ export namespace Service {
       /** phoneNumber */
       phoneNumber: string
     }
+    export interface UpdateUserParam {
+      userInfo?: UserBasicInfoDTO
+      userExtraInfo?: UserExtraInfoDTO
+    }
 
     export interface ListUserBasicInfoParam {
       id?: string
@@ -138,46 +145,46 @@ export namespace Service {
     }
 
     export interface CreditAccountPoolDTO {
-      id:string
-      isConsumed: boolean
-      remainCredit: number
-      totalCredit: number
-      ownerId: string
-      expireTime: number
-      updateTime: number
-      createTime: number
+      id?:string
+      isConsumed?: boolean
+      remainCredit?: number
+      totalCredit?: number
+      ownerId?: string
+      expireTime?: number
+      updateTime?: number
+      createTime?: number
     }
 
     export interface UserBasicInfoDTO{
-      id: string
-      unionId: string
-      avatar: string
-      nickName: string
-      mobile: string
-      realName: string
-      isDefault: boolean
-      riskRankLevel: number
-      type: string
-      birthday: number
-      createTime: number
-      updateTime: number
+      id?: string
+      unionId?: string
+      avatar?: string
+      nickName?: string
+      mobile?: string
+      realName?: string
+      isDefault?: boolean
+      riskRankLevel?: number
+      type?: string
+      birthday?: number
+      createTime?: number
+      updateTime?: number
     }
 
     export interface UserInfoDTO{
-      userInfoDTO: UserBasicInfoDTO
-      userExtraInfoDTO: UserExtraInfoDTO
+      userInfoDTO?: UserBasicInfoDTO
+      userExtraInfoDTO?: UserExtraInfoDTO
     }
 
     export interface UserExtraInfoDTO{
-      unionId: string
-      wxIdentityMap: any
-      certification: any
-      signInCoiledNum: number
-      coinRemain: number
-      createTime: number
-      updateTime: number
-      totalConsumeCnt: number
-      totalConsumeFee: number
+      unionId?: string
+      wxIdentityMap?: any
+      certification?: any
+      signInCoiledNum?: number
+      coinRemain?: number
+      createTime?: number
+      updateTime?: number
+      totalConsumeCnt?: number
+      totalConsumeFee?: number
     }
 
     export interface CreditRecordFacadeDTO {
