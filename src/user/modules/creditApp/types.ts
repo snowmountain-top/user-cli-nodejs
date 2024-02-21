@@ -165,8 +165,8 @@ export namespace Service {
 
     export interface UserExtraInfoDTO{
       unionId: string
-      wxIdentityMap: string
-      certification: string
+      wxIdentityMap: any
+      certification: any
       signInCoiledNum: number
       coinRemain: number
       createTime: number
