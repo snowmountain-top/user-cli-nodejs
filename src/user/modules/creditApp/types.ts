@@ -137,6 +137,19 @@ export namespace Service {
       reduce: number
       reason: string[]
     }
+    export interface CommonlyTouristDTO {
+      id: string
+      unionId: string
+      gender: number
+      idCard: string
+      isSelf: number
+      mobile: string
+      name: string
+      status: string
+      createTime: number
+      updateTime: number
+    }
+
     export interface CreditRecordDTO {
       id:string
       extraInfo: { [key: string]: number }
@@ -305,6 +318,12 @@ export namespace Service {
      * @path /facade/update-user-type
      */
     updateUserType(request:Service.Request.UpdateUserTypeParam): Promise<void>
+
+    /**
+     * 查询常用旅客
+     * @path /facade/get-commonly-tourist-by-unionId
+     */
+    getCommonlyTouristByUnionId(request:Service.Request.GetByUnionIdParam): Promise<Service.Response.CommonlyTouristDTO[]>
 
   }
 }

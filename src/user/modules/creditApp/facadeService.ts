@@ -17,6 +17,9 @@ class CreditFacadeService extends BaseService implements Service.FacadeControlle
   updateUserType(request: any): Promise<any> {
     return callApi<Service.FacadeController['updateUserType']>(this.getApiUrl(this.updateUserType), request)
   }
+  getCommonlyTouristByUnionId(request: any): Promise<any> {
+    return callApi<Service.FacadeController['getCommonlyTouristByUnionId']>(this.getApiUrl(this.getCommonlyTouristByUnionId), request)
+  }
 }
 
 
