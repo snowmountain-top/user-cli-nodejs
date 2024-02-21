@@ -120,6 +120,9 @@ export namespace Service {
     export interface GetByUnionIdParam {
       unionId?: string
     }
+    export interface GetBeLinkOpenIdByUnionIdParam {
+      unionId?: string
+    }
   }
 
   export namespace Response {
@@ -264,6 +267,12 @@ export namespace Service {
      * @path /user/get-by-unionId
      */
     getByUnionId(request:Service.Request.GetByUnionIdParam): Promise<Service.Response.UserInfoDTO>
+
+    /**
+     * 查询用户共比邻小程序openId
+     * @path /user/get-be-link-open-id-by-union-id
+     */
+    getBeLinkOpenIdByUnionId(request:Service.Request.GetBeLinkOpenIdByUnionIdParam): Promise<string>
   }
 
   export interface FacadeController {
