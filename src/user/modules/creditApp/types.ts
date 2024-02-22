@@ -128,12 +128,13 @@ export namespace Service {
 
     export interface QueryBDRelationInfoParam {
       name?: string
-      unionId?: string
-      qyUserId?: string
+      nameLike?:string
+      unionIds?: string[]
+      qyUserIds?: string[]
       isOuter?: boolean
       isValid?: boolean
-      BU?: string
-      vipGroupId?: string
+      BUs?: string[]
+      vipGroupIds?: string[]
     }
 
     export interface IBusinessDevelopmentStaff {
