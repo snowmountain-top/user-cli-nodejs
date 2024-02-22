@@ -161,7 +161,8 @@ export namespace Service {
       registerType?: string,
       scene?: string,
       loginType?: string,
-      nickName?: string
+      nickName?: string,
+      code?: string
     }
   }
 
@@ -345,6 +346,12 @@ export namespace Service {
      * @path /user/get-be-link-open-id-by-union-id
      */
     getBeLinkOpenIdByUnionId(request:Service.Request.GetByUnionIdParam): Promise<string>
+
+    /**
+     * 更新出行人信息
+     * @path /user/get-be-link-open-id-by-union-id
+     */
+    getBeLinkOpenIdByUnionId(request:Service.Request.GetByUnionIdParam): Promise<string>
   }
 
   export interface UserBdController {
@@ -362,8 +369,6 @@ export namespace Service {
      * @param request
      */
     addBDBasicInfo(request:Service.Request.IBusinessDevelopmentStaff): Promise<void>
-
-
 
     /**
      * 修改bd信息
