@@ -360,11 +360,7 @@ export namespace Service {
      */
     addBDBasicInfo(request:Service.Request.IBusinessDevelopmentStaff): Promise<void>
 
-    /**
-     * 新增bd信息
-     * @param request
-     */
-    addBDBasicInfo(request:Service.Request.IBusinessDevelopmentStaff): Promise<void>
+
 
     /**
      * 修改bd信息
