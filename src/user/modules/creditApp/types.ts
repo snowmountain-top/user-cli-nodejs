@@ -126,6 +126,31 @@ export namespace Service {
       birthday?: number
     }
 
+    export interface QueryBDRelationInfoParam {
+      name?: string
+      unionId?: string
+      qyUserId?: string
+      isOuter?: boolean
+      isValid?: boolean
+      BU?: string
+      vipGroupId?: string
+    }
+
+    export interface IBusinessDevelopmentStaff {
+      unionId?: string
+      name?: string
+      qyUserId?: string
+      isOuter?: boolean
+      isValid?: boolean
+      _createTime?: number
+      _updateTime?: number
+    }
+
+    export interface getBdVipGroupIdParam {
+      unionId?: string
+    }
+
+
     export interface GetByUnionIdParam {
       unionId?: string
     }
@@ -198,6 +223,25 @@ export namespace Service {
       birthday?: number
       createTime?: number
       updateTime?: number
+    }
+    export interface UserBDRelationDTO{
+      name?: string
+      unionId?: string
+      qyUserId?: string
+      isOuter?: boolean
+      isValid?: boolean
+      BU?: string
+      vipGroupId?: string
+      _createTime?: number
+      _updateTime?: number
+    }
+
+    export interface bdVipGroupIdDTO{
+      name?:string
+      avatar:string
+      bdName?: string
+      unionId?: string
+      vipGroupId?: string
     }
 
     export interface UserInfoDTO{
@@ -301,6 +345,38 @@ export namespace Service {
      */
     getBeLinkOpenIdByUnionId(request:Service.Request.GetByUnionIdParam): Promise<string>
 
+    /**
+     * 查询用户BD列表
+     * @path /user/list-user-basic-info
+     */
+    queryBDRelationInfo(request:Service.Request.QueryBDRelationInfoParam): Promise<Service.Response.UserBDRelationDTO[]>
+
+
+    sendWillExpireCreditSms(request:any):Promise<boolean>
+
+    /**
+     * 新增bd信息
+     * @param request
+     */
+    addBDBasicInfo(request:Service.Request.IBusinessDevelopmentStaff): Promise<void>
+
+    /**
+     * 新增bd信息
+     * @param request
+     */
+    addBDBasicInfo(request:Service.Request.IBusinessDevelopmentStaff): Promise<void>
+
+    /**
+     * 修改bd信息
+     * @param request
+     */
+    updateBDBasicInfo(request:Service.Request.IBusinessDevelopmentStaff): Promise<void>
+
+    /**
+     * 获取bd信息
+     * @param request
+     */
+    getBdVipGroupId(request:Service.Request.getBdVipGroupIdParam): Promise<Service.Response.bdVipGroupIdDTO>
   }
 
   export interface FacadeController {
