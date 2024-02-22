@@ -129,6 +129,14 @@ export namespace Service {
     export interface GetByUnionIdParam {
       unionId?: string
     }
+    export interface UserLoginParam {
+      unionId?: string,
+      openId?: string,
+      fromAppId?: string,
+      registerType?: string,
+      scene?: string,
+      loginType: string
+    }
   }
 
   export namespace Response {
@@ -292,6 +300,13 @@ export namespace Service {
      * @path /user/get-be-link-open-id-by-union-id
      */
     getBeLinkOpenIdByUnionId(request:Service.Request.GetByUnionIdParam): Promise<string>
+
+
+    /**
+     * 用户登陆
+     * @path /user/user-login
+     */
+    userLogin(request:Service.Request.UserLoginParam): Promise<any>
   }
 
   export interface FacadeController {

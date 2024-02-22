@@ -14,6 +14,9 @@ class UserService extends BaseService implements Service.UserController {
   getBeLinkOpenIdByUnionId(request: any): Promise<any> {
     return callApi<Service.UserController['getBeLinkOpenIdByUnionId']>(this.getApiUrl(this.getBeLinkOpenIdByUnionId), request)
   }
+  userLogin(request: any): Promise<any> {
+    return callApi<Service.UserController['userLogin']>(this.getApiUrl(this.userLogin), request)
+  }
 }
 
 
