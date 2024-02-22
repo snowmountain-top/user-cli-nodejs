@@ -38,7 +38,7 @@
   "dependencies": {
     "axios": "0.27.2",
     "uuid": "^9.0.1",
-    "vitality-meta": "1.0.60"
+    "vitality-meta": "1.0.66"
   },
   "engines": {
     "node": ">18"

@@ -1,5 +1,5 @@
 import {USER} from "../../../types";
-
+import { LoginType } from 'vitality-meta/enums/user'
 export namespace Service {
   export namespace Request {
 
@@ -408,10 +408,10 @@ export namespace Service {
     getCommonlyTouristByUnionId(request:Service.Request.GetByUnionIdParam): Promise<Service.Response.CommonlyTouristDTO[]>
 
     /**
-     * 小程序端用户登录
+     * 用户登录
      * @path /user/user-login
      */
-    userLoginCommunity(request:Service.Request.UserLoginParam): Promise<any>
+    userLogin(request:Service.Request.UserLoginParam): Promise<any>
 
   }
 }
