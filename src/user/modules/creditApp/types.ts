@@ -345,7 +345,9 @@ export namespace Service {
      * @path /user/get-be-link-open-id-by-union-id
      */
     getBeLinkOpenIdByUnionId(request:Service.Request.GetByUnionIdParam): Promise<string>
+  }
 
+  export interface UserBdController {
     /**
      * 查询用户BD列表
      * @path /user/list-user-basic-info
@@ -375,7 +377,6 @@ export namespace Service {
      */
     getBdVipGroupId(request:Service.Request.getBdVipGroupIdParam): Promise<Service.Response.bdVipGroupIdDTO>
   }
-
   export interface FacadeController {
     /**
      * 前端获取用户积分流水
