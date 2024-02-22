@@ -160,7 +160,8 @@ export namespace Service {
       fromAppId?: string,
       registerType?: string,
       scene?: string,
-      loginType: string
+      loginType?: string,
+      nickName?: string
     }
   }
 
@@ -407,10 +408,10 @@ export namespace Service {
     getCommonlyTouristByUnionId(request:Service.Request.GetByUnionIdParam): Promise<Service.Response.CommonlyTouristDTO[]>
 
     /**
-     * 用户登陆
+     * 小程序端用户登录
      * @path /user/user-login
      */
-    userLogin(request:Service.Request.UserLoginParam): Promise<any>
+    userLoginCommunity(request:Service.Request.UserLoginParam): Promise<any>
 
   }
 }
