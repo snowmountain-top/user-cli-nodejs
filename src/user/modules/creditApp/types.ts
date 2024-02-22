@@ -165,7 +165,8 @@ export namespace Service {
       scene?: string,
       loginType?: string,
       nickName?: string,
-      code?: string
+      code?: string,
+      avatar?: string
     }
 
     export interface GetTouristInfoByIdCardParam {
@@ -363,7 +364,7 @@ export namespace Service {
      * 更新用户
      * @path /user/update-user-info
      */
-    updateUserInfo(request:Service.Request.GetByUnionIdParam): Promise<Service.Response.UserInfoDTO>
+    updateUserInfo(request:Service.Request.UpdateUserParam): Promise<boolean>
 
     /**
      * 查询用户共比邻小程序openId
