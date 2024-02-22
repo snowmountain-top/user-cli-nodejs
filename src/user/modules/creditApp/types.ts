@@ -154,6 +154,9 @@ export namespace Service {
     export interface GetByUnionIdParam {
       unionId?: string
     }
+    export interface QueryUserTouristInfoByIdsParam {
+      ids?: string[]
+    }
     export interface UserLoginParam {
       unionId?: string,
       openId?: string,
@@ -163,6 +166,10 @@ export namespace Service {
       loginType?: string,
       nickName?: string,
       code?: string
+    }
+
+    export interface GetTouristInfoByIdCardParam {
+      idCardImageUrl?: string,
     }
   }
 
@@ -280,6 +287,17 @@ export namespace Service {
       credit: number
       time: string
     }
+    export interface GetTouristInfoByIdCardRes {
+      idCard?: string,
+      mobile?: string,
+      name?: string,
+      gender?: number,
+      addr: string,
+      nationality: string,
+      birth: string,
+      type: string,
+    }
+
   }
 
   export interface CreditController {
@@ -342,16 +360,22 @@ export namespace Service {
     getByUnionId(request:Service.Request.GetByUnionIdParam): Promise<Service.Response.UserInfoDTO>
 
     /**
+     * 更新用户
+     * @path /user/update-user-info
+     */
+    updateUserInfo(request:Service.Request.GetByUnionIdParam): Promise<Service.Response.UserInfoDTO>
+
+    /**
      * 查询用户共比邻小程序openId
      * @path /user/get-be-link-open-id-by-union-id
      */
     getBeLinkOpenIdByUnionId(request:Service.Request.GetByUnionIdParam): Promise<string>
 
     /**
-     * 更新出行人信息
-     * @path /user/get-be-link-open-id-by-union-id
+     * 查询用户出行人--ids
+     * @path /user/query-user-tourist-info
      */
-    getBeLinkOpenIdByUnionId(request:Service.Request.GetByUnionIdParam): Promise<string>
+    queryUserTouristInfoByIds(request:Service.Request.QueryUserTouristInfoByIdsParam): Promise<Service.Response.CommonlyTouristDTO[]>
   }
 
   export interface UserBdController {
@@ -415,9 +439,16 @@ export namespace Service {
 
     /**
      * 用户登录
-     * @path /user/user-login
+     * @path /facade/user-login
      */
     userLogin(request:Service.Request.UserLoginParam): Promise<any>
+
+    /**
+     * 通过身份证获取出行人信息 身份证识别
+     * @path /facade/get-tourist-info-by-id-card
+     */
+    getTouristInfoByIdCard(request:Service.Request.GetTouristInfoByIdCardParam): Promise<Service.Response.GetTouristInfoByIdCardRes>
+
 
   }
 }
