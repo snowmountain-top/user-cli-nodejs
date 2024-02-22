@@ -301,12 +301,6 @@ export namespace Service {
      */
     getBeLinkOpenIdByUnionId(request:Service.Request.GetByUnionIdParam): Promise<string>
 
-
-    /**
-     * 用户登陆
-     * @path /user/user-login
-     */
-    userLogin(request:Service.Request.UserLoginParam): Promise<any>
   }
 
   export interface FacadeController {
@@ -339,6 +333,12 @@ export namespace Service {
      * @path /facade/get-commonly-tourist-by-unionId
      */
     getCommonlyTouristByUnionId(request:Service.Request.GetByUnionIdParam): Promise<Service.Response.CommonlyTouristDTO[]>
+
+    /**
+     * 用户登陆
+     * @path /user/user-login
+     */
+    userLogin(request:Service.Request.UserLoginParam): Promise<any>
 
   }
 }
