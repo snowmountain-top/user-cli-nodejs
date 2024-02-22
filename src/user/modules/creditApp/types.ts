@@ -128,7 +128,7 @@ export namespace Service {
 
     export interface QueryBDRelationInfoParam {
       name?: string
-      nameList?:string
+      nameLike?:string
       unionIds?: string[]
       qyUserIds?: string[]
       isOuter?: boolean
