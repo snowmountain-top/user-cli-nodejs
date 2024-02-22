@@ -1,6 +1,6 @@
 {
   "name": "@be-link/user-cli-nodejs",
-  "version": "1.0.33",
+  "version": "1.0.34",
   "description": "逆向订单服务Nodejs客户端",
   "main": "index.js",
   "scripts": {
