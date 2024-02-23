@@ -173,6 +173,18 @@ export namespace Service {
       unionId : string
     }
 
+    export interface QueryUserListForWebParam {
+      limit : number
+      mobile : string
+      nickName: string
+      page : number
+      queryBD : boolean
+      queryMember : boolean
+      touristMobile : string
+      type : string
+      unionId : string
+    }
+
 
     export interface UserLoginParam {
       unionId?: string,
@@ -208,6 +220,27 @@ export namespace Service {
       status: string
       createTime: number
       updateTime: number
+    }
+
+    export interface QueryUserListForWebVO {
+      userList: {
+        _id : number
+        unionId : string
+        avatar : string
+        nickName : string
+        mobile : string
+        realName : string
+        isDefault : number
+        riskRankLevel : number
+        type : string
+        _createTime : number
+        _updateTime : number
+        birthday : number
+        isUserMember : boolean
+        userMemberValid : string
+        credit : number
+      }[]
+      userCount: number
     }
 
     export interface CreditRecordDTO {
@@ -482,9 +515,9 @@ export namespace Service {
     deleteUserCommonlyTourist(request:Service.Request.DeleteCommonlyTouristParam): Promise<Service.Response.CommonlyTouristDTO[]>
 
     /**
-     * 删除出行人信息
+     * web查询用户列表
      * @path /facade/query-user-list-for-web
      */
-    queryUserListForWeb(request:Service.Request.DeleteCommonlyTouristParam): Promise<Service.Response.CommonlyTouristDTO[]>
+    queryUserListForWeb(request:Service.Request.QueryUserListForWebParam): Promise<Service.Response.QueryUserListForWebVO>
   }
 }
