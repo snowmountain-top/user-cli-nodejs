@@ -40,7 +40,7 @@ export namespace Service {
 
     export interface GetCreditReduceParam {
       /** 用户id */
-      unionIds: string[]
+      unionIds: string
     }
 
     export interface GrantPrepareCreditParam {
