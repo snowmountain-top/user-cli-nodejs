@@ -24,4 +24,4 @@ class UserBdService extends BaseService implements Service.UserBdController {
 
 const userService = new UserBdService()
 
-export default UserBdService
+export default userService

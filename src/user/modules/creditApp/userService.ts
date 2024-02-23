@@ -43,4 +43,4 @@ class UserService extends BaseService implements Service.UserController {
 
 const userService = new UserService()
 
-export default UserService
+export default userService
