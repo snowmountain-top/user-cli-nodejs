@@ -158,6 +158,22 @@ export namespace Service {
     export interface QueryUserTouristInfoByIdsParam {
       ids?: string[]
     }
+    export interface UpdateCommonlyTouristParam {
+      gender : number
+      id : string
+      idCard : string
+      isSelf : boolean
+      mobile : number
+      name : string
+      unionId : string
+    }
+
+    export interface DeleteCommonlyTouristParam {
+      touristId : string
+      unionId : string
+    }
+
+
     export interface UserLoginParam {
       unionId?: string,
       openId?: string,
@@ -378,6 +394,19 @@ export namespace Service {
      * @path /user/query-user-tourist-info
      */
     queryUserTouristInfoByIds(request:Service.Request.QueryUserTouristInfoByIdsParam): Promise<Service.Response.CommonlyTouristDTO[]>
+
+    /**
+     * 更新出行人信息
+     * @path /user/update-user-tourists-info
+     */
+    updateUserTouristsInfo(request:Service.Request.UpdateCommonlyTouristParam): Promise<boolean>
+
+    /**
+     * 删除出行人信息
+     * @path /user/delete-user-commonly-tourist
+     */
+    deleteUserCommonlyTourist(request:Service.Request.DeleteCommonlyTouristParam): Promise<boolean>
+
   }
 
   export interface UserBdController {
