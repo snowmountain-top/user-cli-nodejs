@@ -441,7 +441,7 @@ export namespace Service {
      * 查询用户BD列表
      * @path /user/list-user-basic-info
      */
-    queryBDRelationInfo(request:Service.Request.QueryBDRelationInfoParam): Promise<Service.Response.UserBDRelationDTO[]>
+    queryBdRelationInfo(request:Service.Request.QueryBDRelationInfoParam): Promise<Service.Response.UserBDRelationDTO[]>
 
 
     sendWillExpireCreditSms(request:any):Promise<boolean>
@@ -450,13 +450,13 @@ export namespace Service {
      * 新增bd信息
      * @param request
      */
-    addBDBasicInfo(request:Service.Request.IBusinessDevelopmentStaff): Promise<void>
+    addBdBasicInfo(request:Service.Request.IBusinessDevelopmentStaff): Promise<void>
 
     /**
      * 修改bd信息
      * @param request
      */
-    updateBDBasicInfo(request:Service.Request.IBusinessDevelopmentStaff): Promise<void>
+    updateBdBasicInfo(request:Service.Request.IBusinessDevelopmentStaff): Promise<void>
 
     /**
      * 获取bd信息
