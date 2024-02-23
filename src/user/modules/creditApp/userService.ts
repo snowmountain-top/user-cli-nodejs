@@ -38,9 +38,6 @@ class UserService extends BaseService implements Service.UserController {
   updateUserTouristsInfo(request: any): Promise<any> {
     return callApi<Service.UserController['updateUserTouristsInfo']>(this.getApiUrl(this.updateUserTouristsInfo), request)
   }
-  deleteUserCommonlyTourist(request: any): Promise<any> {
-    return callApi<Service.UserController['deleteUserCommonlyTourist']>(this.getApiUrl(this.deleteUserCommonlyTourist), request)
-  }
 }
 
 
