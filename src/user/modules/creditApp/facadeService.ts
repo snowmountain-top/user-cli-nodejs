@@ -29,6 +29,9 @@ class CreditFacadeService extends BaseService implements Service.FacadeControlle
   deleteUserCommonlyTourist(request: any): Promise<any> {
     return callApi<Service.FacadeController['deleteUserCommonlyTourist']>(this.getApiUrl(this.deleteUserCommonlyTourist), request)
   }
+  queryUserListForWeb(request: any): Promise<any> {
+    return callApi<Service.FacadeController['queryUserListForWeb']>(this.getApiUrl(this.queryUserListForWeb), request)
+  }
 
 }
 
