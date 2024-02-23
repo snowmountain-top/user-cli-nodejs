@@ -477,8 +477,14 @@ export namespace Service {
 
     /**
      * 删除出行人信息
-     * @path /user/delete-user-commonly-tourist
+     * @path /facade/delete-user-commonly-tourist
      */
     deleteUserCommonlyTourist(request:Service.Request.DeleteCommonlyTouristParam): Promise<Service.Response.CommonlyTouristDTO[]>
+
+    /**
+     * 删除出行人信息
+     * @path /facade/query-user-list-for-web
+     */
+    queryUserListForWeb(request:Service.Request.DeleteCommonlyTouristParam): Promise<Service.Response.CommonlyTouristDTO[]>
   }
 }
