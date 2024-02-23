@@ -399,13 +399,7 @@ export namespace Service {
      * 更新出行人信息
      * @path /user/update-user-tourists-info
      */
-    updateUserTouristsInfo(request:Service.Request.UpdateCommonlyTouristParam): Promise<boolean>
-
-    /**
-     * 删除出行人信息
-     * @path /user/delete-user-commonly-tourist
-     */
-    deleteUserCommonlyTourist(request:Service.Request.DeleteCommonlyTouristParam): Promise<boolean>
+    updateUserTouristsInfo(request:Service.Request.UpdateCommonlyTouristParam): Promise<Service.Response.CommonlyTouristDTO[]>
 
   }
 
@@ -481,5 +475,10 @@ export namespace Service {
     getTouristInfoByIdCard(request:Service.Request.GetTouristInfoByIdCardParam): Promise<Service.Response.GetTouristInfoByIdCardRes>
 
 
+    /**
+     * 删除出行人信息
+     * @path /user/delete-user-commonly-tourist
+     */
+    deleteUserCommonlyTourist(request:Service.Request.DeleteCommonlyTouristParam): Promise<Service.Response.CommonlyTouristDTO[]>
   }
 }
