@@ -239,6 +239,7 @@ export namespace Service {
         isUserMember : boolean
         userMemberValid : string
         credit : number
+        bdInfos: any
       }[]
       userCount: number
     }
