@@ -163,7 +163,7 @@ export namespace Service {
       id : string
       idCard : string
       isSelf : boolean
-      mobile : number
+      mobile : string
       name : string
       unionId : string
     }
