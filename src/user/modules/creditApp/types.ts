@@ -103,9 +103,7 @@ export namespace Service {
     export interface UpdateUserTypeParam {
       /** unionId */
       unionId: string
-      data: {
-        type: string
-      }
+      type: string
     }
 
     export interface UpdateUserParam {
