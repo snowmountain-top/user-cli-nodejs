@@ -19,31 +19,31 @@ class CreditFacadeService extends BaseService implements Service.FacadeControlle
     return callApi<Service.FacadeController['queryUserByOpenId']>(this.getApiUrl(this.queryUserByOpenId), openId)
   }
 
-  getCreditRecord(request: any): Promise<any> {
+  getCreditRecord(request:Service.Request.GetCreditRecordParam): Promise<Service.Response.CreditRecordFacadeDTO> {
     return callApi<Service.FacadeController['getCreditRecord']>(this.getApiUrl(this.getCreditRecord), request)
   }
-  getMoneyDeductionFromCoin(request: any): Promise<any> {
+  getMoneyDeductionFromCoin(request:Service.Request.GetMoneyDeductionFromCoinParam): Promise<number> {
     return callApi<Service.FacadeController['getMoneyDeductionFromCoin']>(this.getApiUrl(this.getMoneyDeductionFromCoin), request)
   }
-  bindUserMobile(request: any): Promise<any> {
+  bindUserMobile(request:Service.Request.BindUserMobileParam): Promise<void> {
     return callApi<Service.FacadeController['bindUserMobile']>(this.getApiUrl(this.bindUserMobile), request)
   }
-  updateUserType(request: any): Promise<any> {
+  updateUserType(request:Service.Request.UpdateUserTypeParam): Promise<void> {
     return callApi<Service.FacadeController['updateUserType']>(this.getApiUrl(this.updateUserType), request)
   }
-  getCommonlyTouristByUnionId(request: any): Promise<any> {
+  getCommonlyTouristByUnionId(request:Service.Request.GetByUnionIdParam): Promise<Service.Response.CommonlyTouristDTO[]> {
     return callApi<Service.FacadeController['getCommonlyTouristByUnionId']>(this.getApiUrl(this.getCommonlyTouristByUnionId), request)
   }
-  userLogin(request: any): Promise<any> {
+  userLogin(request:Service.Request.UserLoginParam): Promise<any> {
     return callApi<Service.FacadeController['userLogin']>(this.getApiUrl(this.userLogin), request)
   }
-  getTouristInfoByIdCard(request: any): Promise<any> {
+  getTouristInfoByIdCard(request:Service.Request.GetTouristInfoByIdCardParam): Promise<Service.Response.GetTouristInfoByIdCardRes> {
     return callApi<Service.FacadeController['getTouristInfoByIdCard']>(this.getApiUrl(this.getTouristInfoByIdCard), request)
   }
-  deleteUserCommonlyTourist(request: any): Promise<any> {
+  deleteUserCommonlyTourist(request:Service.Request.DeleteCommonlyTouristParam): Promise<Service.Response.CommonlyTouristDTO[]> {
     return callApi<Service.FacadeController['deleteUserCommonlyTourist']>(this.getApiUrl(this.deleteUserCommonlyTourist), request)
   }
-  queryUserListForWeb(request: any): Promise<any> {
+  queryUserListForWeb(request:Service.Request.QueryUserListForWebParam): Promise<Service.Response.QueryUserListForWebVO> {
     return callApi<Service.FacadeController['queryUserListForWeb']>(this.getApiUrl(this.queryUserListForWeb), request)
   }
 

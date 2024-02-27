@@ -8,22 +8,22 @@ class UserService extends BaseService implements Service.UserController {
   }
   protected prefixUrl: string = '/user'
 
-  listUserBasicInfo(request: any): Promise<any> {
+  listUserBasicInfo(request:Service.Request.ListUserBasicInfoParam): Promise<Service.Response.UserBasicInfoDTO[]> {
     return callApi<Service.UserController['listUserBasicInfo']>(this.getApiUrl(this.listUserBasicInfo), request)
   }
-  getByUnionId(request: any): Promise<any> {
+  getByUnionId(request:Service.Request.GetByUnionIdParam): Promise<Service.Response.UserInfoDTO> {
     return callApi<Service.UserController['getByUnionId']>(this.getApiUrl(this.getByUnionId), request)
   }
-  getBeLinkOpenIdByUnionId(request: any): Promise<any> {
+  getBeLinkOpenIdByUnionId(request:Service.Request.GetByUnionIdParam): Promise<string> {
     return callApi<Service.UserController['getBeLinkOpenIdByUnionId']>(this.getApiUrl(this.getBeLinkOpenIdByUnionId), request)
   }
-  queryUserTouristInfoByIds(request: any): Promise<any> {
+  queryUserTouristInfoByIds(request:Service.Request.QueryUserTouristInfoByIdsParam): Promise<Service.Response.CommonlyTouristDTO[]> {
     return callApi<Service.UserController['queryUserTouristInfoByIds']>(this.getApiUrl(this.queryUserTouristInfoByIds), request)
   }
-  updateUserInfo(request: any): Promise<any> {
+  updateUserInfo(request:Service.Request.UpdateUserParam): Promise<boolean> {
     return callApi<Service.UserController['updateUserInfo']>(this.getApiUrl(this.updateUserInfo), request)
   }
-  updateUserTouristsInfo(request: any): Promise<any> {
+  updateUserTouristsInfo(request:Service.Request.UpdateCommonlyTouristParam): Promise<Service.Response.CommonlyTouristDTO[]> {
     return callApi<Service.UserController['updateUserTouristsInfo']>(this.getApiUrl(this.updateUserTouristsInfo), request)
   }
 }

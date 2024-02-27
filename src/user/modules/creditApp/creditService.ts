@@ -5,28 +5,28 @@ import BaseService from '../service'
 class CreditService extends BaseService implements Service.CreditController {
   protected prefixUrl: string = '/credit'
 
-  addCredit(request: any): Promise<any> {
+  addCredit(request:Service.Request.AddCreditParam): Promise<any> {
     return callApi<Service.CreditController['addCredit']>(this.getApiUrl(this.addCredit), request)
   }
-  deductCredit(request: any): Promise<any> {
+  deductCredit(request: Service.Request.DeductCreditParam): Promise<any> {
     return callApi<Service.CreditController['deductCredit']>(this.getApiUrl(this.deductCredit), request)
   }
   getCreditReduce(request: any): Promise<any> {
     return callApi<Service.CreditController['getCreditReduce']>(this.getApiUrl(this.getCreditReduce), request)
   }
-  grantPrepareCredit(request: any): Promise<any> {
+  grantPrepareCredit(request:Service.Request.GrantPrepareCreditParam): Promise<Service.Response.GrantPrepareCreditRes> {
     return callApi<Service.CreditController['grantPrepareCredit']>(this.getApiUrl(this.grantPrepareCredit), request)
   }
-  cancelPrepareCredit(request: any): Promise<any> {
+  cancelPrepareCredit(request:Service.Request.CancelPrepareCreditParam): Promise<void> {
     return callApi<Service.CreditController['cancelPrepareCredit']>(this.getApiUrl(this.cancelPrepareCredit), request)
   }
-  updatePrepareCredit(request: any): Promise<any> {
+  updatePrepareCredit(request:Service.Request.UpdatePrepareCreditParam): Promise<any> {
     return callApi<Service.CreditController['updatePrepareCredit']>(this.getApiUrl(this.updatePrepareCredit), request)
   }
-  queryCreditRecord(request: any): Promise<any> {
+  queryCreditRecord(request:Service.Request.QueryCreditRecordParam): Promise<Service.Response.CreditRecordDTO[]> {
     return callApi<Service.CreditController['queryCreditRecord']>(this.getApiUrl(this.queryCreditRecord), request)
   }
-  queryCreditAccountPool(request: any): Promise<any> {
+  queryCreditAccountPool(request:Service.Request.QueryCreditAccountPoolParam): Promise<Service.Response.CreditAccountPoolDTO[]> {
     return callApi<Service.CreditController['queryCreditAccountPool']>(this.getApiUrl(this.queryCreditAccountPool), request)
   }
 }
