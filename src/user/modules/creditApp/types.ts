@@ -435,6 +435,7 @@ export namespace Service {
      */
     updateUserTouristsInfo(request:Service.Request.UpdateCommonlyTouristParam): Promise<Service.Response.CommonlyTouristDTO[]>
 
+    queryUserByOpenId(openId: string): Promise<any>
   }
 
   export interface UserBdController {
@@ -466,6 +467,22 @@ export namespace Service {
     getBdVipGroupId(request:Service.Request.getBdVipGroupIdParam): Promise<Service.Response.bdVipGroupIdDTO>
   }
   export interface FacadeController {
+    /**
+     * 新增bd信息
+     * @param request
+     */
+    addBdBasicInfo(request:Service.Request.IBusinessDevelopmentStaff): Promise<void>
+
+    /**
+     * 修改bd信息
+     * @param request
+     */
+    updateBdBasicInfo(request:Service.Request.IBusinessDevelopmentStaff): Promise<void>
+    /**
+     * 获取bd信息
+     * @param request
+     */
+    getBdVipGroupId(request:Service.Request.getBdVipGroupIdParam): Promise<Service.Response.bdVipGroupIdDTO>
     /**
      * 前端获取用户积分流水
      * @path /facade/get-credit-record
@@ -520,5 +537,7 @@ export namespace Service {
      * @path /facade/query-user-list-for-web
      */
     queryUserListForWeb(request:Service.Request.QueryUserListForWebParam): Promise<Service.Response.QueryUserListForWebVO>
+    queryUserByOpenId(openId: string): Promise<any>
   }
+
 }
