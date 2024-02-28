@@ -70,6 +70,8 @@ export namespace Service {
       createTimeStart?: number
       /** 创建时间结束*/
       createTimeEnd?: number
+      /** 来源ids*/
+      sourceIds?: string[]
     }
 
     export interface QueryCreditAccountPoolParam {
