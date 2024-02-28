@@ -110,7 +110,7 @@ export namespace Service {
 
     export interface ListUserBasicInfoParam {
       id?: string
-      unionId?: string
+      unionIds?: string[]
       avatar?: string
       nickName?: string
       mobile?: string
