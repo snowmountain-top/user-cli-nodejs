@@ -30,7 +30,7 @@ export namespace Service {
       credit?: number
       title?: string
       content?: string[]
-      operatorId: string
+      operatorId?: string
     }
 
     export interface GetCreditReduceParam {
