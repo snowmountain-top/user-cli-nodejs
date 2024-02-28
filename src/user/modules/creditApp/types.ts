@@ -24,18 +24,13 @@ export namespace Service {
     }
 
     export interface DeductCreditParam {
-      /** 用户id */
       unionId?: string
-      /** 来源类型 */
       sourceType?: string
-      /** 来源id */
       sourceId?: string
-      /** 积分数量 */
       credit?: number
-      /** 标题 */
       title?: string
-      /** 内容 */
       content?: string[]
+      operatorId: string
     }
 
     export interface GetCreditReduceParam {
