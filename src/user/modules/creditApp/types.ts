@@ -181,6 +181,11 @@ export namespace Service {
       name : string
       unionId : string
     }
+    export interface QueryCreditRecordByUnionIdForWebParam {
+      unionId : string
+      pageIndex : number
+      pageSize : number
+    }
 
     export interface DeleteCommonlyTouristParam {
       touristId : string
@@ -234,6 +239,23 @@ export namespace Service {
       status: string
       createTime: number
       updateTime: number
+    }
+
+    export interface QueryCreditRecordByUnionIdForWebRes {
+      _id: string
+      _createTime: number
+      _updateTime : number
+      basicInfo: {
+        content: string[]
+      }
+      credit : number
+      operation : string
+      ownerId : string
+      sourceId : string
+      sourceType : string
+      status : string
+      title : string
+      expireTime : number
     }
 
     export interface QueryUserListForWebVO {
@@ -577,6 +599,9 @@ export namespace Service {
      * @path /facade/update-user-tourists-info
      */
     updateUserTouristsInfo(request:Service.Request.UpdateCommonlyTouristParam): Promise<Service.Response.CommonlyTouristDTO[]>
+
+
+    queryCreditRecordByUnionIdForWeb(request:Service.Request.QueryCreditRecordByUnionIdForWebParam): Promise<Service.Response.QueryCreditRecordByUnionIdForWebRes[]>
 
 
   }
