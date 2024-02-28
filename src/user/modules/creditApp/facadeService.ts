@@ -3,6 +3,18 @@ import BaseService from '../service'
 import {Service} from "./types";
 
 class CreditFacadeService extends BaseService implements Service.FacadeController {
+  getFollowButlerForMember(unionId: string): Promise<Service.Response.FollowButlerForMemberDTO> {
+    return callApi<Service.FacadeController['getFollowButlerForMember']>(this.getApiUrl(this.getFollowButlerForMember), unionId)
+  }
+  addButler(param: Service.Request.addButlerParam): Promise<void> {
+    return callApi<Service.FacadeController['addButler']>(this.getApiUrl(this.addButler), param)
+  }
+  getBdInfoByUnionIdAndType(param: Service.Request.getBdInfoByUnionIdAndTypeParam): Promise<Service.Response.UserBDRelationDTO[]> {
+    return callApi<Service.FacadeController['getBdInfoByUnionIdAndType']>(this.getApiUrl(this.getBdInfoByUnionIdAndType), param)
+  }
+  queryButlers(param: Service.Request.queryButlersParam): Promise<any> {
+    return callApi<Service.FacadeController['queryButlers']>(this.getApiUrl(this.queryButlers), param)
+  }
   addBd(request: Service.Request.IBusinessDevelopmentStaff): Promise<void> {
     return callApi<Service.FacadeController['addBd']>(this.getApiUrl(this.addBd), request)
   }
