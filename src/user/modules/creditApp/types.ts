@@ -130,9 +130,12 @@ export namespace Service {
       isValid?: boolean
       BUs?: string[]
       vipGroupIds?: string[]
+      types?:string[]
+      ids?:string[]
     }
 
     export interface IBusinessDevelopmentStaff {
+      id?:number
       unionId?: string
       name?: string
       qyUserId?: string
@@ -140,12 +143,28 @@ export namespace Service {
       isValid?: boolean
       _createTime?: number
       _updateTime?: number
+      type?:string
     }
 
     export interface getBdVipGroupIdParam {
       unionId?: string
     }
-
+    export interface addButlerParam {
+      mobile?: string
+      qyUserId?:string
+    }
+    export interface getBdInfoByUnionIdAndTypeParam {
+      unionId?: string
+      type?:string
+    }
+    export interface queryButlersParam {
+      pageIndex?: number
+      pageSize?:number
+      name?:string
+      mobile?:string
+      qyUserId?:string
+      types?:string[]
+    }
 
     export interface GetByUnionIdParam {
       unionId?: string
@@ -290,6 +309,7 @@ export namespace Service {
       vipGroupId?: string
       _createTime?: number
       _updateTime?: number
+      type?:string
     }
 
     export interface bdVipGroupIdDTO{
@@ -298,8 +318,15 @@ export namespace Service {
       bdName?: string
       unionId?: string
       vipGroupId?: string
+      type?:string
     }
-
+    export interface FollowButlerForMemberDTO{
+      name?:string
+      avatar:string
+      vipGroupId?: string
+      unionId?: string
+      type?: string
+    }
     export interface UserInfoDTO{
       userInfoDTO?: UserBasicInfoDTO
       userExtraInfoDTO?: UserExtraInfoDTO
@@ -460,6 +487,7 @@ export namespace Service {
      * @param request
      */
     getBdVipGroupId(request:Service.Request.getBdVipGroupIdParam): Promise<Service.Response.bdVipGroupIdDTO>
+
   }
   export interface FacadeController {
     /**
@@ -533,6 +561,15 @@ export namespace Service {
      */
     queryUserListForWeb(request:Service.Request.QueryUserListForWebParam): Promise<Service.Response.QueryUserListForWebVO>
     queryUserByOpenId(openId: string): Promise<any>
+
+
+    getFollowButlerForMember(unionId:string): Promise<Service.Response.FollowButlerForMemberDTO>
+
+    addButler(param:Service.Request.addButlerParam): Promise<void>
+
+    getBdInfoByUnionIdAndType(param:Service.Request.getBdInfoByUnionIdAndTypeParam): Promise<Service.Response.UserBDRelationDTO[]>
+
+    queryButlers(param:Service.Request.queryButlersParam): Promise<any>
   }
 
 }
