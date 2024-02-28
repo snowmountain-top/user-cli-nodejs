@@ -247,15 +247,16 @@ export namespace Service {
       _updateTime : number
       basicInfo: {
         content: string[]
+        credit : number
+        operation : string
+        ownerId : string
+        sourceId : string
+        sourceType : string
+        status : string
+        title : string
+        expireTime : number
       }
-      credit : number
-      operation : string
-      ownerId : string
-      sourceId : string
-      sourceType : string
-      status : string
-      title : string
-      expireTime : number
+
     }
 
     export interface QueryUserListForWebVO {
