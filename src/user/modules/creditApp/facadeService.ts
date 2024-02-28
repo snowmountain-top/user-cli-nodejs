@@ -3,8 +3,8 @@ import BaseService from '../service'
 import {Service} from "./types";
 
 class CreditFacadeService extends BaseService implements Service.FacadeController {
-  getFollowButlerForMember(unionId: string): Promise<Service.Response.FollowButlerForMemberDTO> {
-    return callApi<Service.FacadeController['getFollowButlerForMember']>(this.getApiUrl(this.getFollowButlerForMember), unionId)
+  getFollowButlerForMember(request:any): Promise<Service.Response.FollowButlerForMemberDTO> {
+    return callApi<Service.FacadeController['getFollowButlerForMember']>(this.getApiUrl(this.getFollowButlerForMember), request)
   }
   addButler(param: Service.Request.addButlerParam): Promise<void> {
     return callApi<Service.FacadeController['addButler']>(this.getApiUrl(this.addButler), param)
@@ -18,7 +18,7 @@ class CreditFacadeService extends BaseService implements Service.FacadeControlle
   addBd(request: Service.Request.IBusinessDevelopmentStaff): Promise<void> {
     return callApi<Service.FacadeController['addBd']>(this.getApiUrl(this.addBd), request)
   }
-  updateBd(request: Service.Request.IBusinessDevelopmentStaff): Promise<void> {
+  updateBd(request: Service.Request.IUpdateBd): Promise<void> {
     return callApi<Service.FacadeController['updateBd']>(this.getApiUrl(this.updateBd), request)
   }
   getBdVipGroupId(request: Service.Request.getBdVipGroupIdParam): Promise<Service.Response.bdVipGroupIdDTO> {
