@@ -18,7 +18,7 @@ class CreditFacadeService extends BaseService implements Service.FacadeControlle
   addBd(request: Service.Request.IBusinessDevelopmentStaff): Promise<void> {
     return callApi<Service.FacadeController['addBd']>(this.getApiUrl(this.addBd), request)
   }
-  updateBd(request: Service.Request.IBusinessDevelopmentStaff): Promise<void> {
+  updateBd(request: Service.Request.IUpdateBd): Promise<void> {
     return callApi<Service.FacadeController['updateBd']>(this.getApiUrl(this.updateBd), request)
   }
   getBdVipGroupId(request: Service.Request.getBdVipGroupIdParam): Promise<Service.Response.bdVipGroupIdDTO> {

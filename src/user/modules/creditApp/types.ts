@@ -146,6 +146,11 @@ export namespace Service {
       type?:string
     }
 
+    export interface IUpdateBd {
+      unionId:string
+      data:IBusinessDevelopmentStaff
+    }
+
     export interface getBdVipGroupIdParam {
       unionId?: string
     }
@@ -522,7 +527,7 @@ export namespace Service {
      * 修改bd信息
      * @param request
      */
-    updateBd(request:Service.Request.IBusinessDevelopmentStaff): Promise<void>
+    updateBd(request:Service.Request.IUpdateBd): Promise<void>
     /**
      * 获取bd信息
      * @param request
