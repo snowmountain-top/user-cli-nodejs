@@ -19,6 +19,10 @@ class CreditFacadeService extends BaseService implements Service.FacadeControlle
     return callApi<Service.FacadeController['queryUserByOpenId']>(this.getApiUrl(this.queryUserByOpenId), openId)
   }
 
+  updateUserTouristsInfo(request:Service.Request.UpdateCommonlyTouristParam): Promise<Service.Response.CommonlyTouristDTO[]> {
+    return callApi<Service.FacadeController['updateUserTouristsInfo']>(this.getApiUrl(this.updateUserTouristsInfo), request)
+  }
+
   getCreditRecord(request:Service.Request.GetCreditRecordParam): Promise<Service.Response.CreditRecordFacadeDTO> {
     return callApi<Service.FacadeController['getCreditRecord']>(this.getApiUrl(this.getCreditRecord), request)
   }

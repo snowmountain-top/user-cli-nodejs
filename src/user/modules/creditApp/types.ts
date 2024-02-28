@@ -532,7 +532,16 @@ export namespace Service {
      * @path /facade/query-user-list-for-web
      */
     queryUserListForWeb(request:Service.Request.QueryUserListForWebParam): Promise<Service.Response.QueryUserListForWebVO>
+
     queryUserByOpenId(openId: string): Promise<any>
+
+    /**
+     * 更新出行人信息
+     * @path /facade/update-user-tourists-info
+     */
+    updateUserTouristsInfo(request:Service.Request.UpdateCommonlyTouristParam): Promise<Service.Response.CommonlyTouristDTO[]>
+
+
   }
 
 }
