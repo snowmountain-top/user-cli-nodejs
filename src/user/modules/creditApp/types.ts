@@ -591,7 +591,7 @@ export namespace Service {
     queryUserByOpenId(openId: string): Promise<any>
 
 
-    getFollowButlerForMember(unionId:string): Promise<Service.Response.FollowButlerForMemberDTO>
+    getFollowButlerForMember(request:any): Promise<Service.Response.FollowButlerForMemberDTO>
 
     addButler(param:Service.Request.addButlerParam): Promise<void>
 
