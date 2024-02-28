@@ -471,13 +471,13 @@ export namespace Service {
      * 新增bd信息
      * @param request
      */
-    addBdBasicInfo(request:Service.Request.IBusinessDevelopmentStaff): Promise<void>
+    addBd(request:Service.Request.IBusinessDevelopmentStaff): Promise<void>
 
     /**
      * 修改bd信息
      * @param request
      */
-    updateBdBasicInfo(request:Service.Request.IBusinessDevelopmentStaff): Promise<void>
+    updateBd(request:Service.Request.IBusinessDevelopmentStaff): Promise<void>
     /**
      * 获取bd信息
      * @param request

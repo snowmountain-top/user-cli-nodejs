@@ -3,11 +3,11 @@ import BaseService from '../service'
 import {Service} from "./types";
 
 class CreditFacadeService extends BaseService implements Service.FacadeController {
-  addBdBasicInfo(request: Service.Request.IBusinessDevelopmentStaff): Promise<void> {
-    return callApi<Service.FacadeController['addBdBasicInfo']>(this.getApiUrl(this.addBdBasicInfo), request)
+  addBd(request: Service.Request.IBusinessDevelopmentStaff): Promise<void> {
+    return callApi<Service.FacadeController['addBd']>(this.getApiUrl(this.addBd), request)
   }
-  updateBdBasicInfo(request: Service.Request.IBusinessDevelopmentStaff): Promise<void> {
-    return callApi<Service.FacadeController['updateBdBasicInfo']>(this.getApiUrl(this.updateBdBasicInfo), request)
+  updateBd(request: Service.Request.IBusinessDevelopmentStaff): Promise<void> {
+    return callApi<Service.FacadeController['updateBd']>(this.getApiUrl(this.updateBd), request)
   }
   getBdVipGroupId(request: Service.Request.getBdVipGroupIdParam): Promise<Service.Response.bdVipGroupIdDTO> {
     return callApi<Service.FacadeController['getBdVipGroupId']>(this.getApiUrl(this.getBdVipGroupId), request)
