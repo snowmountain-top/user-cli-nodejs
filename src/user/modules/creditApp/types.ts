@@ -568,7 +568,7 @@ export namespace Service {
      * 用户登录
      * @path /facade/user-login
      */
-    userLogin(request:Service.Request.UserLoginParam): Promise<any>
+    userLogin(request:Service.Request.UserLoginParam, req:any): Promise<any>
 
     /**
      * 通过身份证获取出行人信息 身份证识别
