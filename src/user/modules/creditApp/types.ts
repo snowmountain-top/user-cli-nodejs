@@ -362,7 +362,7 @@ export namespace Service {
      * 查询用户当前余额
      * @path /credit/get-credit-reduce
      */
-    getCreditReduce(request:Service.Request.GetCreditReduceParam): Promise<number>
+    getCreditReduce(request:Service.Request.GetCreditReduceParam): Promise<Map<string, number>>
     /**
      * 发放预发放的积分
      * @path /credit/grant-prepare-credit
