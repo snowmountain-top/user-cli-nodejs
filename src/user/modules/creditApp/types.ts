@@ -200,6 +200,11 @@ export namespace Service {
       pageSize : number
     }
 
+    export interface QueryCreditAccountRecordByStatusParam {
+      ownerId : string
+      status : number
+    }
+
     export interface DeleteCommonlyTouristParam {
       touristId : string
       unionId : string
@@ -617,6 +622,8 @@ export namespace Service {
 
     queryCreditRecordByUnionIdForWeb(request:Service.Request.QueryCreditRecordByUnionIdForWebParam): Promise<Service.Response.QueryCreditRecordByUnionIdForWebRes[]>
 
+
+    queryCreditAccountRecordByStatus(request:Service.Request.QueryCreditAccountRecordByStatusParam): Promise<Service.Response.QueryCreditRecordByUnionIdForWebRes[]>
 
   }
 

@@ -39,6 +39,10 @@ class CreditFacadeService extends BaseService implements Service.FacadeControlle
     return callApi<Service.FacadeController['queryCreditRecordByUnionIdForWeb']>(this.getApiUrl(this.queryCreditRecordByUnionIdForWeb), request)
   }
 
+  queryCreditAccountRecordByStatus(request:Service.Request.QueryCreditAccountRecordByStatusParam): Promise<Service.Response.QueryCreditRecordByUnionIdForWebRes[]> {
+    return callApi<Service.FacadeController['queryCreditAccountRecordByStatus']>(this.getApiUrl(this.queryCreditAccountRecordByStatus), request)
+  }
+
   getCreditRecord(request:Service.Request.GetCreditRecordParam): Promise<Service.Response.CreditRecordFacadeDTO> {
     return callApi<Service.FacadeController['getCreditRecord']>(this.getApiUrl(this.getCreditRecord), request)
   }
