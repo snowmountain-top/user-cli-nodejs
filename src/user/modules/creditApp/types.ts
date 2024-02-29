@@ -204,6 +204,10 @@ export namespace Service {
       name? : string
       unionId? : string
     }
+
+    export interface UserInfoRecognitionParam {
+      imageUrl? : string
+    }
     export interface QueryCreditRecordByUnionIdForWebParam {
       unionId : string
       pageIndex : number
@@ -278,6 +282,15 @@ export namespace Service {
       createTime: number
       updateTime: number
       isNew: boolean
+    }
+
+    export interface UserInfoRecognitionRes {
+      type: string,
+      data: {
+        name: string,
+        idCard: string,
+        mobile: string,
+      }[]
     }
 
     export interface QueryCreditRecordByUnionIdForWebRes {
@@ -522,6 +535,8 @@ export namespace Service {
     queryUserByOpenId(openId: string): Promise<any>
 
     createUserTourists(request:Service.Request.CreateCommonlyTouristParam): Promise<Service.Response.CommonlyTouristDTO[]>
+
+    userInfoRecognition(request:Service.Request.UserInfoRecognitionParam): Promise<Service.Response.UserInfoRecognitionRes>
   }
 
   export interface UserBdController {
