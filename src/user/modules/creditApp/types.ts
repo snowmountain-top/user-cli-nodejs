@@ -207,6 +207,8 @@ export namespace Service {
 
     export interface QuerySumCreditWillExpireParam {
       ownerId : string
+      startTime: number
+      expireTime: number
     }
 
     export interface DeleteCommonlyTouristParam {
