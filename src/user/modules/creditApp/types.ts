@@ -205,6 +205,10 @@ export namespace Service {
       status : string;
     }
 
+    export interface QuerySumCreditWillExpireParam {
+      ownerId : string
+    }
+
     export interface DeleteCommonlyTouristParam {
       touristId : string
       unionId : string
@@ -624,6 +628,8 @@ export namespace Service {
 
 
     queryCreditAccountRecordByStatus(request:Service.Request.QueryCreditAccountRecordByStatusParam): Promise<Service.Response.QueryCreditRecordByUnionIdForWebRes[]>
+
+    querySumCreditWillExpire(request:Service.Request.QuerySumCreditWillExpireParam): Promise<number>
 
   }
 
