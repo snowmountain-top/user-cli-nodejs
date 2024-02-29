@@ -202,7 +202,7 @@ export namespace Service {
 
     export interface QueryCreditAccountRecordByStatusParam {
       ownerId : string
-      status : USER.Constants.CreditRecordStatusEnum;
+      status : string;
     }
 
     export interface DeleteCommonlyTouristParam {
