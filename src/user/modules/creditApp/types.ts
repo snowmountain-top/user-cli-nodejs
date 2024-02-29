@@ -93,8 +93,16 @@ export namespace Service {
     }
 
     export interface BindUserMobileParam {
-      /** phoneNumber */
-      phoneNumber: string
+      cloudID: string,
+      data: {
+        countryCode: string,
+        phoneNumber: string,
+        purePhoneNumber: string,
+        watermark: {
+          appid: string,
+          timestamp: number
+        }
+      }
     }
 
     export interface UpdateUserTypeParam {
@@ -178,13 +186,13 @@ export namespace Service {
       ids?: string[]
     }
     export interface UpdateCommonlyTouristParam {
-      gender : number
-      id : string
-      idCard : string
-      isSelf : boolean
-      mobile : string
-      name : string
-      unionId : string
+      gender? : number
+      id? : string
+      idCard? : string
+      isSelf? : boolean
+      mobile? : string
+      name? : string
+      unionId? : string
     }
     export interface QueryCreditRecordByUnionIdForWebParam {
       unionId : string
@@ -568,7 +576,7 @@ export namespace Service {
      * 用户登录
      * @path /facade/user-login
      */
-    userLogin(request:Service.Request.UserLoginParam, req:any): Promise<any>
+    userLogin(request:Service.Request.UserLoginParam): Promise<any>
 
     /**
      * 通过身份证获取出行人信息 身份证识别
