@@ -277,6 +277,7 @@ export namespace Service {
       status: string
       createTime: number
       updateTime: number
+      isNew: boolean
     }
 
     export interface QueryCreditRecordByUnionIdForWebRes {
