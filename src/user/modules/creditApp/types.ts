@@ -194,6 +194,16 @@ export namespace Service {
       name? : string
       unionId? : string
     }
+
+    export interface CreateCommonlyTouristParam {
+      gender? : number
+      id? : string
+      idCard? : string
+      isSelf? : boolean
+      mobile? : string
+      name? : string
+      unionId? : string
+    }
     export interface QueryCreditRecordByUnionIdForWebParam {
       unionId : string
       pageIndex : number
@@ -505,6 +515,8 @@ export namespace Service {
     updateUserTouristsInfo(request:Service.Request.UpdateCommonlyTouristParam): Promise<Service.Response.CommonlyTouristDTO[]>
 
     queryUserByOpenId(openId: string): Promise<any>
+
+    createUserTourists(request:Service.Request.CreateCommonlyTouristParam): Promise<Service.Response.CommonlyTouristDTO[]>
   }
 
   export interface UserBdController {
