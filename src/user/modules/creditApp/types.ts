@@ -221,6 +221,10 @@ export namespace Service {
       expireTime: number
     }
 
+    export interface GetUserInfoByUnionIdForQwParam {
+      unionId : string
+    }
+
     export interface DeleteCommonlyTouristParam {
       touristId : string
       unionId : string
@@ -644,6 +648,8 @@ export namespace Service {
     queryCreditAccountRecordByStatus(request:Service.Request.QueryCreditAccountRecordByStatusParam): Promise<Service.Response.QueryCreditRecordByUnionIdForWebRes[]>
 
     querySumCreditWillExpire(request:Service.Request.QuerySumCreditWillExpireParam): Promise<number>
+
+    getUserInfoByUnionIdForQw(request:Service.Request.GetUserInfoByUnionIdForQwParam): Promise<any>
 
   }
 
