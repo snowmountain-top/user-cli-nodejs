@@ -238,6 +238,10 @@ export namespace Service {
       unionId : string
     }
 
+    export interface GetMobileFeeCreditRecordFor30DaysParam {
+      unionId : string
+    }
+
     export interface DeleteCommonlyTouristParam {
       touristId : string
       unionId : string
@@ -454,6 +458,23 @@ export namespace Service {
       nationality: string,
       birth: string,
       type: string,
+    }
+
+    export interface GetMobileFeeCreditRecordFor30DaysRes {
+      _id: string
+      _createTime: number
+      _updateTime: number
+      basicInfo: {
+        content: string[]
+        credit: number
+        operation: string
+        ownerId: string
+        sourceId: string
+        sourceType: string
+        status: string
+        title: string
+        expireTime: number
+      }
     }
 
   }
@@ -679,6 +700,8 @@ export namespace Service {
     bindUserMobileDirectly(request:Service.Request.BindUserMobileDirectlyParam):Promise<any>
 
     getCreditReduceByUnionId(request:Service.Request.GetCreditReduceByUnionIdParam): Promise<number>
+
+    getMobileFeeCreditRecordFor30Days(request:Service.Request.GetMobileFeeCreditRecordFor30DaysParam): Promise<Service.Response.GetMobileFeeCreditRecordFor30DaysRes>
   }
 
 }
