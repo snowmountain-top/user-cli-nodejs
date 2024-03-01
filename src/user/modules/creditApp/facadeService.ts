@@ -59,7 +59,7 @@ class CreditFacadeService extends BaseService implements Service.FacadeControlle
     return callApi<Service.FacadeController['getCreditReduceByUnionId']>(this.getApiUrl(this.getCreditReduceByUnionId), request)
   }
 
-  getMobileFeeCreditRecordFor30Days(request:Service.Request.GetMobileFeeCreditRecordFor30DaysParam): Promise<Service.Response.GetMobileFeeCreditRecordFor30DaysRes> {
+  getMobileFeeCreditRecordFor30Days(request:Service.Request.GetMobileFeeCreditRecordFor30DaysParam): Promise<any> {
     return callApi<Service.FacadeController['getMobileFeeCreditRecordFor30Days']>(this.getApiUrl(this.getMobileFeeCreditRecordFor30Days), request)
   }
 
