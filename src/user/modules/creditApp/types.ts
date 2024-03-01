@@ -610,7 +610,7 @@ export namespace Service {
      * 根据用户授权存储用户手机号
      * @path /facade/bind-user-mobile
      */
-    bindUserMobile(request:Service.Request.BindUserMobileParam): Promise<void>
+    bindUserMobile(request:Service.Request.BindUserMobileParam): Promise<any>
 
     /**
      * 更新用户的员工身份
