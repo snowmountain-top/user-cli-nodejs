@@ -229,6 +229,15 @@ export namespace Service {
       unionId : string
     }
 
+    export interface BindUserMobileDirectlyParam {
+      unionId : string
+      mobile: string
+    }
+
+    export interface GetCreditReduceByUnionIdParam {
+      unionId : string
+    }
+
     export interface DeleteCommonlyTouristParam {
       touristId : string
       unionId : string
@@ -667,6 +676,9 @@ export namespace Service {
 
     getUserInfoByUnionIdForQw(request:Service.Request.GetUserInfoByUnionIdForQwParam): Promise<any>
 
+    bindUserMobileDirectly(request:Service.Request.BindUserMobileDirectlyParam):Promise<any>
+
+    getCreditReduceByUnionId(request:Service.Request.GetCreditReduceByUnionIdParam): Promise<number>
   }
 
 }
