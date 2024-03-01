@@ -701,7 +701,7 @@ export namespace Service {
 
     getCreditReduceByUnionId(request:Service.Request.GetCreditReduceByUnionIdParam): Promise<number>
 
-    getMobileFeeCreditRecordFor30Days(request:Service.Request.GetMobileFeeCreditRecordFor30DaysParam): Promise<Service.Response.GetMobileFeeCreditRecordFor30DaysRes>
+    getMobileFeeCreditRecordFor30Days(request:Service.Request.GetMobileFeeCreditRecordFor30DaysParam): Promise<any>
   }
 
 }
