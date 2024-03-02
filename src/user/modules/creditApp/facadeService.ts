@@ -3,6 +3,9 @@ import BaseService from '../service'
 import {Service} from "./types";
 
 class CreditFacadeService extends BaseService implements Service.FacadeController {
+  queryAllValidBd(): Promise<Service.Response.UserBDRelationDTO[]> {
+    return callApi<Service.FacadeController['queryAllValidBd']>(this.getApiUrl(this.queryAllValidBd))
+  }
   getFollowButlerForMember(request:any): Promise<Service.Response.FollowButlerForMemberDTO> {
     return callApi<Service.FacadeController['getFollowButlerForMember']>(this.getApiUrl(this.getFollowButlerForMember), request)
   }

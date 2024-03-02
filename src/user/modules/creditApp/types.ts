@@ -154,6 +154,13 @@ export namespace Service {
       type?:string
     }
 
+
+    export interface IBdInfoByUnionIdAndTypeDTO{
+      type?: string
+      unionId?: string
+    }
+
+
     export interface IUpdateBd {
       unionId:string
       data:IBusinessDevelopmentStaff
@@ -399,7 +406,6 @@ export namespace Service {
       _updateTime?: number
       type?:string
     }
-
     export interface bdVipGroupIdDTO{
       name?:string
       avatar:string
@@ -604,7 +610,7 @@ export namespace Service {
      * @param request
      */
     addBd(request:Service.Request.IBusinessDevelopmentStaff): Promise<void>
-
+    queryAllValidBd(): Promise<Service.Response.UserBDRelationDTO[]>
     /**
      * 修改bd信息
      * @param request
