@@ -542,7 +542,7 @@ export namespace Service {
      * 更新用户
      * @path /user/update-user-info
      */
-    updateUserInfo(request:Service.Request.UpdateUserParam): Promise<boolean>
+    updateUserInfo(request:Service.Request.UpdateUserParam): Promise<any>
 
     /**
      * 查询用户共比邻小程序openId
