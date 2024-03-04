@@ -155,6 +155,10 @@ export namespace Service {
       _updateTime?: number
       type?:string
     }
+    export interface IUserBirthdayWeb {
+      unionId:string
+      birthday:number
+    }
 
 
     export interface IBdInfoByUnionIdAndTypeDTO{
@@ -613,6 +617,7 @@ export namespace Service {
 
   }
   export interface FacadeController {
+    updateUserBirthdayWeb(request:Service.Request.IUserBirthdayWeb): Promise<void>
     /**
      * 新增bd信息
      * @param request

@@ -3,6 +3,9 @@ import BaseService from '../service'
 import {Service} from "./types";
 
 class FacadeService extends BaseService implements Service.FacadeController {
+  updateUserBirthdayWeb(request: Service.Request.IUserBirthdayWeb): Promise<void> {
+    return callApi<Service.FacadeController['updateUserBirthdayWeb']>(this.getApiUrl(this.updateUserBirthdayWeb),request)
+  }
   queryAllValidBd(): Promise<Service.Response.UserBDRelationDTO[]> {
     return callApi<Service.FacadeController['queryAllValidBd']>(this.getApiUrl(this.queryAllValidBd))
   }
