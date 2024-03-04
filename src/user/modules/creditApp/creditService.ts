@@ -29,6 +29,9 @@ class CreditService extends BaseService implements Service.CreditController {
   queryCreditAccountPool(request:Service.Request.QueryCreditAccountPoolParam): Promise<Service.Response.CreditAccountPoolDTO[]> {
     return callApi<Service.CreditController['queryCreditAccountPool']>(this.getApiUrl(this.queryCreditAccountPool), request)
   }
+  getCreditReduceByUnionId(request:Service.Request.GetCreditReduceByUnionIdParam): Promise<number> {
+    return callApi<Service.CreditController['getCreditReduceByUnionId']>(this.getApiUrl(this.getCreditReduceByUnionId), request)
+  }
 }
 
 

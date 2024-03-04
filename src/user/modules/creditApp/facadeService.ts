@@ -2,7 +2,7 @@ import { callApi } from '../../http'
 import BaseService from '../service'
 import {Service} from "./types";
 
-class CreditFacadeService extends BaseService implements Service.FacadeController {
+class FacadeService extends BaseService implements Service.FacadeController {
   queryAllValidBd(): Promise<Service.Response.UserBDRelationDTO[]> {
     return callApi<Service.FacadeController['queryAllValidBd']>(this.getApiUrl(this.queryAllValidBd))
   }
@@ -97,6 +97,6 @@ class CreditFacadeService extends BaseService implements Service.FacadeControlle
 }
 
 
-const creditFacadeService = new CreditFacadeService()
+const facadeService = new FacadeService()
 
-export default creditFacadeService
+export default facadeService

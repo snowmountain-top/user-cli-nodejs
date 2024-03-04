@@ -529,6 +529,12 @@ export namespace Service {
      * @path /credit/query-credit-account-pool
      */
     queryCreditAccountPool(request:Service.Request.QueryCreditAccountPoolParam): Promise<Service.Response.CreditAccountPoolDTO[]>
+
+    /**
+     * 查询剩余积分
+     * @path /credit/get-credit-reduce-by-union-id
+     */
+    getCreditReduceByUnionId(request:Service.Request.GetCreditReduceByUnionIdParam): Promise<number>
   }
 
   export interface UserController {
