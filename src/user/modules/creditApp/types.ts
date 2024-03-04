@@ -232,7 +232,7 @@ export namespace Service {
       expireTime: number
     }
 
-    export interface GetUserInfoByUnionIdForQwParam {
+    export interface GetUserInfoByUnionIdParam {
       unionId : string
     }
 
@@ -701,7 +701,7 @@ export namespace Service {
 
     querySumCreditWillExpire(request:Service.Request.QuerySumCreditWillExpireParam): Promise<number>
 
-    getUserInfoByUnionIdForQw(request:Service.Request.GetUserInfoByUnionIdForQwParam): Promise<any>
+    getUserInfoByUnionId(request:Service.Request.GetUserInfoByUnionIdParam): Promise<any>
 
     bindUserMobileDirectly(request:Service.Request.BindUserMobileDirectlyParam):Promise<any>
 

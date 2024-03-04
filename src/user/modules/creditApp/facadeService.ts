@@ -50,8 +50,8 @@ class CreditFacadeService extends BaseService implements Service.FacadeControlle
     return callApi<Service.FacadeController['querySumCreditWillExpire']>(this.getApiUrl(this.querySumCreditWillExpire), request)
   }
 
-  getUserInfoByUnionIdForQw(request:Service.Request.GetUserInfoByUnionIdForQwParam): Promise<number> {
-    return callApi<Service.FacadeController['getUserInfoByUnionIdForQw']>(this.getApiUrl(this.getUserInfoByUnionIdForQw), request)
+  getUserInfoByUnionId(request:Service.Request.GetUserInfoByUnionIdParam): Promise<any> {
+    return callApi<Service.FacadeController['getUserInfoByUnionId']>(this.getApiUrl(this.getUserInfoByUnionId), request)
   }
 
   bindUserMobileDirectly(request:Service.Request.BindUserMobileDirectlyParam): Promise<any> {
