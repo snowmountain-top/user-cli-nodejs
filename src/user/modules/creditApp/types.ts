@@ -80,6 +80,8 @@ export namespace Service {
       expireTimeStart?: number
       /** 过期时间结束 */
       expireTimeEnd?: number
+      page?: number
+      size?: number
     }
 
     export interface GetCreditRecordParam {
