@@ -7,10 +7,10 @@ export default abstract class BaseService {
   protected abstract prefixUrl: string
   /** 子网域名 */
   protected readonly natDevHost = 'http://qgostaxv.user-service.nmkh74o4.rlwzae9d.com:8090'
-  protected readonly natProdHost = 'http://bxbvjnca.ros-app.cwl9ok0a.mk2u3r3l.com:8090'
+  protected readonly natProdHost = 'http://bxbvjnca.user-app.cwl9ok0a.mk2u3r3l.com:8090'
   /** 公网域名 */
   protected readonly publicDevHost = 'https://user-service-74680-5-1304510571.sh.run.tcloudbase.com'
-  protected readonly publicProdHost = 'https://ros-app-60660-10-1304510571.sh.run.tcloudbase.com'
+  protected readonly publicProdHost = 'https://user-app-60660-10-1304510571.sh.run.tcloudbase.com'
 
   constructor() {
     /** 如果是云函数环境, 默认走公网访问 */
