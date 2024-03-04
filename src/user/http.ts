@@ -1,5 +1,5 @@
 import axios, { AxiosError } from 'axios'
-import RosError from '../errors/RosError'
+import UserError from '../errors/UserError'
 import { v4 as uuidV4 } from 'uuid'
 import BizError from '../errors/BizError'
 type ResponseData = {
@@ -33,8 +33,8 @@ export async function callApi<T extends (args: any) => Promise<any>>(url: string
       const ErrorClass = axiosError.response
         ? axiosError.response.status === 400
           ? BizError
-          : RosError
-        : RosError
+          : UserError
+        : UserError
       if (axiosError.response) {
         const response = axiosError.response
         const data = response.data as ResponseData
@@ -43,10 +43,10 @@ export async function callApi<T extends (args: any) => Promise<any>>(url: string
         console.info('响应信息Data', JSON.stringify(data))
         console.error('异常堆栈', JSON.stringify(error.stack))
         if (axiosError.response.status !== 502) {
-          throw new ErrorClass(data.message || 'Ros Error', response.status)
+          throw new ErrorClass(data.message || 'User Error', response.status)
         }
         if (retries === maxRetries) {
-          throw new ErrorClass(data.message || 'Ros Error', response.status)
+          throw new ErrorClass(data.message || 'User Error', response.status)
         }
       }
       console.error(`USER 未知异常: ${axiosError.message}`, error.stack)
