@@ -12,7 +12,7 @@ class FacadeService extends BaseService implements Service.FacadeController {
   addButler(param: Service.Request.addButlerParam): Promise<void> {
     return callApi<Service.FacadeController['addButler']>(this.getApiUrl(this.addButler), param)
   }
-  getBdInfoByUnionIdAndType(param: Service.Request.getBdInfoByUnionIdAndTypeParam): Promise<Service.Response.UserBDRelationDTO[]> {
+  getBdInfoByUnionIdAndType(param: Service.Request.getBdInfoByUnionIdAndTypeParam): Promise<Service.Response.UserBDRelationDTO> {
     return callApi<Service.FacadeController['getBdInfoByUnionIdAndType']>(this.getApiUrl(this.getBdInfoByUnionIdAndType), param)
   }
   queryButlers(param: Service.Request.queryButlersParam): Promise<any> {

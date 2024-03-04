@@ -689,7 +689,7 @@ export namespace Service {
 
     addButler(param:Service.Request.addButlerParam): Promise<void>
 
-    getBdInfoByUnionIdAndType(param:Service.Request.getBdInfoByUnionIdAndTypeParam): Promise<Service.Response.UserBDRelationDTO[]>
+    getBdInfoByUnionIdAndType(param:Service.Request.getBdInfoByUnionIdAndTypeParam): Promise<Service.Response.UserBDRelationDTO>
 
     queryButlers(param:Service.Request.queryButlersParam): Promise<any>
 
