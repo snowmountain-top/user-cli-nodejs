@@ -86,8 +86,12 @@ export namespace Service {
 
     export interface GetCreditRecordParam {
       /** unionId */
-      unionId: string
+      unionId?: string
     }
+    export interface GetCreditRecordBySourceIdParam {
+      sourceId?: string
+    }
+
 
     export interface GetMoneyDeductionFromCoinParam {
       /** unionId */
@@ -721,6 +725,9 @@ export namespace Service {
     getCreditReduceByUnionId(request:Service.Request.GetCreditReduceByUnionIdParam): Promise<number>
 
     getMobileFeeCreditRecordFor30Days(request:Service.Request.GetMobileFeeCreditRecordFor30DaysParam): Promise<any>
+
+    getCreditRecordBySourceId(request:Service.Request.GetCreditRecordBySourceIdParam): Promise<Service.Response.CreditRecordDTO>
+
   }
 
 }
