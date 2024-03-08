@@ -693,7 +693,7 @@ export namespace Service {
      */
     queryUserListForWeb(request:Service.Request.QueryUserListForWebParam): Promise<Service.Response.QueryUserListForWebVO>
 
-    queryUserByOpenId(openId: string): Promise<any>
+    queryUserByOpenId(request:any): Promise<any>
 
 
     getFollowButlerForMember(request:any): Promise<Service.Response.FollowButlerForMemberDTO>
