@@ -1,7 +1,7 @@
 {
   "name": "@be-link/user-cli-nodejs",
   "version": "1.0.83",
-  "description": "逆向订单服务Nodejs客户端",
+  "description": "用户服务Nodejs客户端",
   "main": "index.js",
   "scripts": {
     "build": "rm -rf ./dist && tsc && cp package.json README.md ./dist/",
