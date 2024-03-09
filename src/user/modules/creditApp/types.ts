@@ -545,6 +545,8 @@ export namespace Service {
      * @path /credit/get-credit-reduce-by-union-id
      */
     getCreditReduceByUnionId(request:Service.Request.GetCreditReduceByUnionIdParam): Promise<number>
+
+    getCreditRecordBySourceId(request:Service.Request.GetCreditRecordBySourceIdParam): Promise<Service.Response.CreditRecordDTO>
   }
 
   export interface UserController {
