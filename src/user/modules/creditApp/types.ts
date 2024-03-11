@@ -728,7 +728,7 @@ export namespace Service {
 
     getMobileFeeCreditRecordFor30Days(request:Service.Request.GetMobileFeeCreditRecordFor30DaysParam): Promise<any>
 
-    getCreditRecordBySourceId(request:Service.Request.GetCreditRecordBySourceIdParam): Promise<Service.Response.CreditRecordDTO>
+    getCreditRecordBySourceId(request:Service.Request.GetCreditRecordBySourceIdParam): Promise<any>
 
   }
 
