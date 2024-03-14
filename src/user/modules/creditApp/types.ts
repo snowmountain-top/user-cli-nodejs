@@ -323,6 +323,10 @@ export namespace Service {
       }[]
     }
 
+    export interface GetUnionIdByCloudContextRes {
+      unionId: string
+    }
+
     export interface QueryCreditRecordByUnionIdForWebRes {
       _id: string
       _createTime: number
@@ -591,6 +595,8 @@ export namespace Service {
     createUserTourists(request:Service.Request.CreateCommonlyTouristParam): Promise<Service.Response.CommonlyTouristDTO[]>
 
     userInfoRecognition(request:Service.Request.UserInfoRecognitionParam): Promise<Service.Response.UserInfoRecognitionRes>
+
+    getUnionIdByCloudContext(): Promise<Service.Response.GetUnionIdByCloudContextRes>
   }
 
   export interface UserBdController {
