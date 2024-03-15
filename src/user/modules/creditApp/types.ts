@@ -627,6 +627,12 @@ export namespace Service {
     userInfoRecognition(request:Service.Request.UserInfoRecognitionParam): Promise<Service.Response.UserInfoRecognitionRes>
 
     getUnionIdByCloudContext(): Promise<Service.Response.GetUnionIdByCloudContextRes>
+
+    /**
+     * 校验用户风险等级
+     * @path /user/check-user-risk-rank
+     */
+    checkUserRiskRank(): Promise<number>
   }
 
   export interface UserBdController {

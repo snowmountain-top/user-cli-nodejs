@@ -25,6 +25,10 @@ class UserService extends BaseService implements Service.UserController {
   getUnionIdByCloudContext(): Promise<Service.Response.GetUnionIdByCloudContextRes> {
     return callApi<Service.UserController['getUnionIdByCloudContext']>(this.getApiUrl(this.getUnionIdByCloudContext))
   }
+
+  checkUserRiskRank(): Promise<number> {
+    return callApi<Service.UserController['checkUserRiskRank']>(this.getApiUrl(this.checkUserRiskRank))
+  }
   getBeLinkOpenIdByUnionId(request:Service.Request.GetByUnionIdParam): Promise<string> {
     return callApi<Service.UserController['getBeLinkOpenIdByUnionId']>(this.getApiUrl(this.getBeLinkOpenIdByUnionId), request)
   }
