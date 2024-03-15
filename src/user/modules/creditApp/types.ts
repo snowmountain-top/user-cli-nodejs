@@ -664,6 +664,10 @@ export namespace Service {
     getBdVipGroupId(request:Service.Request.getBdVipGroupIdParam): Promise<Service.Response.bdVipGroupIdDTO>
 
   }
+  export interface UserJobController {
+    jobUpdateCreditIncomeSubMsg(): Promise<void>
+  }
+
   export interface FacadeController {
     updateUserBirthdayWeb(request:Service.Request.IUserBirthdayWeb): Promise<void>
     /**
