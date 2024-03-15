@@ -225,6 +225,9 @@ export namespace Service {
     export interface UserInfoRecognitionParam {
       imageUrl? : string
     }
+    export interface UserInfoRecognitionByGptParam {
+      ocrContent?: string
+    }
     export interface QueryCreditRecordByUnionIdForWebParam {
       unionId : string
       pageIndex : number
@@ -625,6 +628,8 @@ export namespace Service {
     createUserTourists(request:Service.Request.CreateCommonlyTouristParam): Promise<Service.Response.CommonlyTouristDTO[]>
 
     userInfoRecognition(request:Service.Request.UserInfoRecognitionParam): Promise<Service.Response.UserInfoRecognitionRes>
+
+    userInfoRecognitionByGpt(request:Service.Request.UserInfoRecognitionByGptParam): Promise<Service.Response.UserInfoRecognitionRes>
 
     getUnionIdByCloudContext(): Promise<Service.Response.GetUnionIdByCloudContextRes>
 

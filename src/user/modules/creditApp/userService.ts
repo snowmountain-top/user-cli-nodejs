@@ -22,6 +22,10 @@ class UserService extends BaseService implements Service.UserController {
     return callApi<Service.UserController['userInfoRecognition']>(this.getApiUrl(this.userInfoRecognition), request)
   }
 
+  userInfoRecognitionByGpt(request:Service.Request.UserInfoRecognitionParam): Promise<Service.Response.UserInfoRecognitionRes> {
+    return callApi<Service.UserController['userInfoRecognitionByGpt']>(this.getApiUrl(this.userInfoRecognitionByGpt), request)
+  }
+
   getUnionIdByCloudContext(): Promise<Service.Response.GetUnionIdByCloudContextRes> {
     return callApi<Service.UserController['getUnionIdByCloudContext']>(this.getApiUrl(this.getUnionIdByCloudContext))
   }
