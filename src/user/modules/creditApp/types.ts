@@ -237,9 +237,9 @@ export namespace Service {
     }
 
     export interface QuerySumCreditWillExpireParam {
-      ownerId : string
-      startTime: number
-      expireTime: number
+      ownerId?: string
+      startTime?: number
+      expireTime?: number
     }
 
     export interface GetUserInfoByUnionIdParam {
@@ -440,6 +440,38 @@ export namespace Service {
       userExtraInfoDTO?: UserExtraInfoDTO
     }
 
+    export interface UpdateUserResDTO{
+      user: UserResDTO
+    }
+
+    export interface UserResDTO{
+      _id?: string,
+      unionId?: string,
+      avatar?: string,
+      nickName?: string,
+      mobile?: string,
+      realName?: string,
+      isDefault?: boolean,
+      riskRankLevel?: number,
+      type?: string,
+      _createTime?: number,
+      _updateTime?: number,
+      birthday?: number,
+      wxIdentityMap?: {},
+      growthInfo?: {
+        signInCoiledNum?: number
+      },
+      creditInfo?: {
+        reduce?: number
+      },
+      certification?: {} | [],
+      tourismInfo?: {
+        commonlyTourists?: CommonlyTouristDTO[]
+      },
+      role?: any,
+
+    }
+
     export interface UserExtraInfoDTO{
       unionId?: string
       wxIdentityMap?: any
@@ -504,7 +536,7 @@ export namespace Service {
      * 增加金币
      * @path /credit/add-credit
      */
-    addCredit(request:Service.Request.AddCreditParam): Promise<any>
+    addCredit(request:Service.Request.AddCreditParam): Promise<string>
     /**
      * 扣减金币
      * @path /credit/deduct-credit
@@ -549,8 +581,6 @@ export namespace Service {
      * @path /credit/get-credit-reduce-by-union-id
      */
     getCreditReduceByUnionId(request:Service.Request.GetCreditReduceByUnionIdParam): Promise<number>
-
-    getCreditRecordBySourceId(request:Service.Request.GetCreditRecordBySourceIdParam): Promise<Service.Response.CreditRecordDTO>
   }
 
   export interface UserController {
@@ -570,7 +600,7 @@ export namespace Service {
      * 更新用户
      * @path /user/update-user-info
      */
-    updateUserInfo(request:Service.Request.UpdateUserParam): Promise<any>
+    updateUserInfo(request:Service.Request.UpdateUserParam): Promise<Service.Response.UpdateUserResDTO>
 
     /**
      * 查询用户共比邻小程序openId
@@ -590,7 +620,7 @@ export namespace Service {
      */
     updateUserTouristsInfo(request:Service.Request.UpdateCommonlyTouristParam): Promise<Service.Response.CommonlyTouristDTO[]>
 
-    queryUserByOpenId(openId: string): Promise<any>
+    queryUserByOpenId(openId: string): Promise<Service.Response.UserResDTO>
 
     createUserTourists(request:Service.Request.CreateCommonlyTouristParam): Promise<Service.Response.CommonlyTouristDTO[]>
 
