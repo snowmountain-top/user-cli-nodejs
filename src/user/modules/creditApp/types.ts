@@ -222,6 +222,10 @@ export namespace Service {
       unionId? : string
     }
 
+    export interface QueryUserByOpenIdParam {
+      openId: string
+    }
+
     export interface UserInfoRecognitionParam {
       imageUrl? : string
     }
@@ -623,7 +627,7 @@ export namespace Service {
      */
     updateUserTouristsInfo(request:Service.Request.UpdateCommonlyTouristParam): Promise<Service.Response.CommonlyTouristDTO[]>
 
-    queryUserByOpenId(openId: string): Promise<Service.Response.UserResDTO>
+    queryUserByOpenId(request:Service.Request.QueryUserByOpenIdParam): Promise<Service.Response.UserResDTO>
 
     createUserTourists(request:Service.Request.CreateCommonlyTouristParam): Promise<Service.Response.CommonlyTouristDTO[]>
 
