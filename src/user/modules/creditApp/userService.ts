@@ -3,8 +3,8 @@ import BaseService from '../service'
 import {Service} from "./types";
 
 class UserService extends BaseService implements Service.UserController {
-  queryUserByOpenId(openId: string): Promise<any> {
-    return callApi<Service.UserController['queryUserByOpenId']>(this.getApiUrl(this.queryUserByOpenId), openId)
+  queryUserByOpenId(request:Service.Request.QueryUserByOpenIdParam): Promise<Service.Response.UserResDTO> {
+    return callApi<Service.UserController['queryUserByOpenId']>(this.getApiUrl(this.queryUserByOpenId), request)
   }
   protected prefixUrl: string = '/user'
 
