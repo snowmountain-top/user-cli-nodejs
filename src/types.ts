@@ -18,6 +18,13 @@ export namespace USER {
        */
       SUBTRACT = 'SUBTRACT',
     }
+    /**
+     * 注册类型枚举
+     * @enum
+     */
+    export const enum RegisterTypeEnum {
+      OFFICIAL_ACCOUNT = 'OFFICIAL_ACCOUNT',
+    }
 
     /**
      * 记录状态
