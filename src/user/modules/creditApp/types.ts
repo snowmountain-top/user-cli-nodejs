@@ -456,7 +456,7 @@ export namespace Service {
       }[]
     }
 
-    interface IconDetail {
+    export interface IconDetail {
       partyIcon: boolean;           // 聚会大使
       photographyIcon: boolean;     // 摄影专家
       teamIcon: boolean;            // 带团达人
@@ -466,7 +466,7 @@ export namespace Service {
       starIcon: boolean;            // 出镜明星
       dandelionIcon: boolean;       // 超级蒲公英
   }
-  interface DetailList {
+  export interface DetailList {
     desc: string;       // 描述
     integral: number;   // 星值
 }
