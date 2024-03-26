@@ -226,6 +226,10 @@ export namespace Service {
       openId: string
     }
 
+    export interface GetFollowButlerForMemberParam {
+      unionId : string
+    }
+
     export interface UserInfoRecognitionParam {
       imageUrl? : string
     }
@@ -427,6 +431,24 @@ export namespace Service {
       _updateTime?: number
       type?:string
     }
+
+    export interface QueryButlersResDTO{
+      total: number
+      list: {
+        id : any
+        unionId : string
+        name : string
+        type : string
+        qyUserId : string
+        isOuter : any
+        _createTime : number
+        _updateTime : number
+        isValid : any
+        BU : any
+        vipGroupId : string
+        mobile : string
+      }[]
+    }
     export interface bdVipGroupIdDTO{
       name?:string
       avatar:string
@@ -477,6 +499,23 @@ export namespace Service {
       },
       role?: any,
 
+    }
+
+    export interface CreditRecordOldStructureResDTO{
+      _id: string
+      _createTime: number
+      _updateTime: number
+      basicInfo: {
+        content: string[]
+        credit: number
+        operation: string
+        ownerId: string
+        sourceId: string
+        sourceType: string
+        status: string
+        title: string
+        expireTime: number
+      },
     }
 
     export interface UserExtraInfoDTO{
@@ -711,7 +750,7 @@ export namespace Service {
      * 根据用户授权存储用户手机号
      * @path /facade/bind-user-mobile
      */
-    bindUserMobile(request:Service.Request.BindUserMobileParam): Promise<any>
+    bindUserMobile(request:Service.Request.BindUserMobileParam): Promise<Service.Response.UserResDTO>
 
     /**
      * 更新用户的员工身份
@@ -729,7 +768,7 @@ export namespace Service {
      * 用户登录
      * @path /facade/user-login
      */
-    userLogin(request:Service.Request.UserLoginParam): Promise<any>
+    userLogin(request:Service.Request.UserLoginParam): Promise<Service.Response.UserResDTO>
 
     /**
      * 通过身份证获取出行人信息 身份证识别
@@ -750,16 +789,16 @@ export namespace Service {
      */
     queryUserListForWeb(request:Service.Request.QueryUserListForWebParam): Promise<Service.Response.QueryUserListForWebVO>
 
-    queryUserByOpenId(request:any): Promise<any>
+    queryUserByOpenId(request: Service.Request.QueryUserByOpenIdParam): Promise<Service.Response.UserResDTO>
 
 
-    getFollowButlerForMember(request:any): Promise<Service.Response.FollowButlerForMemberDTO>
+    getFollowButlerForMember(request:Service.Request.GetFollowButlerForMemberParam): Promise<Service.Response.FollowButlerForMemberDTO>
 
     addButler(param:Service.Request.addButlerParam): Promise<void>
 
     getBdInfoByUnionIdAndType(param:Service.Request.getBdInfoByUnionIdAndTypeParam): Promise<Service.Response.UserBDRelationDTO>
 
-    queryButlers(param:Service.Request.queryButlersParam): Promise<any>
+    queryButlers(param:Service.Request.queryButlersParam): Promise<Service.Response.QueryButlersResDTO>
 
     /**
      * 更新出行人信息
@@ -775,15 +814,15 @@ export namespace Service {
 
     querySumCreditWillExpire(request:Service.Request.QuerySumCreditWillExpireParam): Promise<number>
 
-    getUserInfoByUnionId(request:Service.Request.GetUserInfoByUnionIdParam): Promise<any>
+    getUserInfoByUnionId(request:Service.Request.GetUserInfoByUnionIdParam): Promise<Service.Response.UserResDTO>
 
-    bindUserMobileDirectly(request:Service.Request.BindUserMobileDirectlyParam):Promise<any>
+    bindUserMobileDirectly(request:Service.Request.BindUserMobileDirectlyParam):Promise<Service.Response.UserResDTO>
 
     getCreditReduceByUnionId(request:Service.Request.GetCreditReduceByUnionIdParam): Promise<number>
 
-    getMobileFeeCreditRecordFor30Days(request:Service.Request.GetMobileFeeCreditRecordFor30DaysParam): Promise<any>
+    getMobileFeeCreditRecordFor30Days(request:Service.Request.GetMobileFeeCreditRecordFor30DaysParam): Promise<Service.Response.CreditRecordOldStructureResDTO>
 
-    getCreditRecordBySourceId(request:Service.Request.GetCreditRecordBySourceIdParam): Promise<any>
+    getCreditRecordBySourceId(request:Service.Request.GetCreditRecordBySourceIdParam): Promise<Service.Response.CreditRecordOldStructureResDTO>
 
   }
 

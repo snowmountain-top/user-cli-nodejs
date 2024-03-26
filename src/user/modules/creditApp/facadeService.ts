@@ -33,7 +33,7 @@ class FacadeService extends BaseService implements Service.FacadeController {
 
   protected prefixUrl: string = '/facade'
 
-  queryUserByOpenId(request:any): Promise<any> {
+  queryUserByOpenId(request: Service.Request.QueryUserByOpenIdParam): Promise<any> {
     return callApi<Service.FacadeController['queryUserByOpenId']>(this.getApiUrl(this.queryUserByOpenId), request)
   }
 
