@@ -438,7 +438,6 @@ export namespace Service {
       type?:string
     }
 
-<<<<<<< HEAD
     export interface QueryButlersResDTO{
       total: number
       list: {
@@ -456,7 +455,7 @@ export namespace Service {
         mobile : string
       }[]
     }
-=======
+
     interface IconDetail {
       partyIcon: boolean;           // 聚会大使
       photographyIcon: boolean;     // 摄影专家
@@ -494,7 +493,6 @@ export interface UserVolunteerIntegralDetail {
       unionId?: string;
       name?: string;
   }
->>>>>>> origin/master
     export interface bdVipGroupIdDTO{
       name?:string
       avatar:string
