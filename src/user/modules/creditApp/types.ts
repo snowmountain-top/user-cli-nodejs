@@ -163,6 +163,12 @@ export namespace Service {
       unionId:string
       birthday:number
     }
+    export interface IUserVolunteerDetail {
+      unionId:string
+    }
+    export interface IUserIntegralDetail {
+      unionId:string
+    }
 
 
     export interface IBdInfoByUnionIdAndTypeDTO{
@@ -432,6 +438,7 @@ export namespace Service {
       type?:string
     }
 
+<<<<<<< HEAD
     export interface QueryButlersResDTO{
       total: number
       list: {
@@ -449,6 +456,45 @@ export namespace Service {
         mobile : string
       }[]
     }
+=======
+    interface IconDetail {
+      partyIcon: boolean;           // 聚会大使
+      photographyIcon: boolean;     // 摄影专家
+      teamIcon: boolean;            // 带团达人
+      videoExpertsIcon: boolean;    // 短视频高手
+      assistantIcon: boolean;       // 助教能手
+      liveBroadcastIcon: boolean;   // 直播大咖
+      starIcon: boolean;            // 出镜明星
+      dandelionIcon: boolean;       // 超级蒲公英
+  }
+  interface DetailList {
+    desc: string;       // 描述
+    integral: number;   // 星值
+}
+
+export interface UserVolunteerIntegralDetail {
+    title: string;          // 标题
+    integralSum: number;    // 总星值
+    harvestIntegral: number; // 收获星值
+    time: number;           // 时间
+    detailList: DetailList[]; // 明细列表
+}
+  export interface UserVolunteerDetail {
+      integralSum: number;          // 总星值
+      joinTime: number;             // 加入时间
+      iconDetail: IconDetail;
+      partyDay?: number;            // 一日聚驻店天数
+      shareNum?: number;            // 分享会驻场次数
+      hotelNum?: number;            // 聚会酒店驻店次数
+      tourNum?: number;             // 旅游出团次数
+      memberNum?: number;           // 会员数
+      partyOrderNum?: number;       // 一日聚单数
+      hotelOrderNum?: number;       // 聚会酒店单数
+      tourPeopleNum?: number;       // 旅游人次
+      unionId?: string;
+      name?: string;
+  }
+>>>>>>> origin/master
     export interface bdVipGroupIdDTO{
       name?:string
       avatar:string
@@ -717,6 +763,10 @@ export namespace Service {
   }
 
   export interface FacadeController {
+    listUserIntegralDetail(request:Service.Request.IUserIntegralDetail): Promise<Service.Response.UserVolunteerIntegralDetail[]>
+
+    getUserVolunteerDetail(request:Service.Request.IUserVolunteerDetail): Promise<Service.Response.UserVolunteerDetail>
+
     updateUserBirthdayWeb(request:Service.Request.IUserBirthdayWeb): Promise<void>
     /**
      * 新增bd信息

@@ -3,11 +3,17 @@ import BaseService from '../service'
 import {Service} from "./types";
 
 class FacadeService extends BaseService implements Service.FacadeController {
+  listUserIntegralDetail(request:Service.Request.IUserIntegralDetail): Promise<Service.Response.UserVolunteerIntegralDetail[]>{
+    return callApi<Service.FacadeController['listUserIntegralDetail']>(this.getApiUrl(this.listUserIntegralDetail),request)
+  }
   updateUserBirthdayWeb(request: Service.Request.IUserBirthdayWeb): Promise<void> {
     return callApi<Service.FacadeController['updateUserBirthdayWeb']>(this.getApiUrl(this.updateUserBirthdayWeb),request)
   }
   queryAllValidBd(): Promise<Service.Response.UserBDRelationDTO[]> {
     return callApi<Service.FacadeController['queryAllValidBd']>(this.getApiUrl(this.queryAllValidBd))
+  }
+  getUserVolunteerDetail(request: Service.Request.IUserBirthdayWeb): Promise<Service.Response.UserVolunteerDetail> {
+    return callApi<Service.FacadeController['getUserVolunteerDetail']>(this.getApiUrl(this.getUserVolunteerDetail),request)
   }
   getFollowButlerForMember(request:any): Promise<Service.Response.FollowButlerForMemberDTO> {
     return callApi<Service.FacadeController['getFollowButlerForMember']>(this.getApiUrl(this.getFollowButlerForMember), request)
