@@ -546,19 +546,19 @@ export interface UserVolunteerIntegralDetail {
     }
 
     export interface CreditRecordOldStructureResDTO{
-      _id: string
-      _createTime: number
-      _updateTime: number
-      basicInfo: {
-        content: string[]
-        credit: number
-        operation: string
-        ownerId: string
-        sourceId: string
-        sourceType: string
-        status: string
-        title: string
-        expireTime: number
+      _id?: string
+      _createTime?: number
+      _updateTime?: number
+      basicInfo?: {
+        content?: string[]
+        credit?: number
+        operation?: string
+        ownerId?: string
+        sourceId?: string
+        sourceType?: string
+        status?: string
+        title?: string
+        expireTime?: number
       },
     }
 
@@ -868,7 +868,7 @@ export interface UserVolunteerIntegralDetail {
 
     getCreditReduceByUnionId(request:Service.Request.GetCreditReduceByUnionIdParam): Promise<number>
 
-    getMobileFeeCreditRecordFor30Days(request:Service.Request.GetMobileFeeCreditRecordFor30DaysParam): Promise<Service.Response.CreditRecordOldStructureResDTO>
+    getMobileFeeCreditRecordFor30Days(request:Service.Request.GetMobileFeeCreditRecordFor30DaysParam): Promise<Service.Response.CreditRecordOldStructureResDTO[]>
 
     getCreditRecordBySourceId(request:Service.Request.GetCreditRecordBySourceIdParam): Promise<Service.Response.CreditRecordOldStructureResDTO>
 
