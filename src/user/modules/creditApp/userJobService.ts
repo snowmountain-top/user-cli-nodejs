@@ -6,6 +6,9 @@ class UserJobService extends BaseService implements Service.UserJobController {
   jobUpdateCreditIncomeSubMsg(): Promise<void> {
     return callApi<Service.UserJobController['jobUpdateCreditIncomeSubMsg']>(this.getApiUrl(this.jobUpdateCreditIncomeSubMsg))
   }
+  jobSendWillExpireCreditSms(): Promise<void> {
+    return callApi<Service.UserJobController['jobSendWillExpireCreditSms']>(this.getApiUrl(this.jobSendWillExpireCreditSms))
+  }
   protected prefixUrl: string = '/userJob'
 }
 

@@ -758,6 +758,8 @@ export interface UserVolunteerIntegralDetail {
   }
   export interface UserJobController {
     jobUpdateCreditIncomeSubMsg(): Promise<void>
+
+    jobSendWillExpireCreditSms(): Promise<void>
   }
 
   export interface FacadeController {
