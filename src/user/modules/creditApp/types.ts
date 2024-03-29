@@ -303,7 +303,8 @@ export namespace Service {
       loginType?: string,
       nickName?: string,
       code?: string,
-      avatar?: string
+      avatar?: string,
+      js_code?: string
     }
 
     export interface GetTouristInfoByIdCardParam {
