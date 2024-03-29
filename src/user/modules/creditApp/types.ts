@@ -543,7 +543,36 @@ export interface UserVolunteerIntegralDetail {
         commonlyTourists?: CommonlyTouristDTO[]
       },
       role?: any,
+    }
 
+    export interface UserLoginResDTO{
+      user: {
+        _id?: string,
+        unionId?: string,
+        avatar?: string,
+        nickName?: string,
+        mobile?: string,
+        realName?: string,
+        isDefault?: boolean,
+        riskRankLevel?: number,
+        type?: string,
+        _createTime?: number,
+        _updateTime?: number,
+        birthday?: number,
+        wxIdentityMap?: {},
+        growthInfo?: {
+          signInCoiledNum?: number
+        },
+        creditInfo?: {
+          reduce?: number
+        },
+        certification?: {} | [],
+        tourismInfo?: {
+          commonlyTourists?: CommonlyTouristDTO[]
+        },
+      },
+      isNew: boolean
+      token: string
     }
 
     export interface CreditRecordOldStructureResDTO{
@@ -819,7 +848,7 @@ export interface UserVolunteerIntegralDetail {
      * 用户登录
      * @path /facade/user-login
      */
-    userLogin(request:Service.Request.UserLoginParam): Promise<Service.Response.UserResDTO>
+    userLogin(request:Service.Request.UserLoginParam): Promise<Service.Response.UserLoginResDTO>
 
     /**
      * 通过身份证获取出行人信息 身份证识别

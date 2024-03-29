@@ -94,7 +94,7 @@ class FacadeService extends BaseService implements Service.FacadeController {
   getCommonlyTouristByUnionId(request:Service.Request.GetByUnionIdParam): Promise<Service.Response.CommonlyTouristDTO[]> {
     return callApi<Service.FacadeController['getCommonlyTouristByUnionId']>(this.getApiUrl(this.getCommonlyTouristByUnionId), request)
   }
-  userLogin(request:Service.Request.UserLoginParam): Promise<any> {
+  userLogin(request:Service.Request.UserLoginParam): Promise<Service.Response.UserLoginResDTO> {
     return callApi<Service.FacadeController['userLogin']>(this.getApiUrl(this.userLogin), request)
   }
   getTouristInfoByIdCard(request:Service.Request.GetTouristInfoByIdCardParam): Promise<Service.Response.GetTouristInfoByIdCardRes> {
