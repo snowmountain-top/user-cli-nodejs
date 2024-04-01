@@ -19,7 +19,9 @@ export async function callApi<T extends (args: any) => Promise<any>>(url: string
       console.info(`准备发起USER请求[${requestId}]: ${url}, 参数: ${JSON.stringify(request)}`);
       const response = await axios.post(url, request[0], {
         headers: {
-          'X-Request-Id': requestId
+          'X-Request-Id': requestId,
+          'x-belink-accessType': 'authorizationTokenInside',
+          'x-belink-authorization': process.env.authorizationTokenInside || ""
         },
         timeout: 60000, // 设置超时时间为 60 秒
       });
