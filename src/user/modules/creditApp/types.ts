@@ -547,6 +547,7 @@ export interface UserVolunteerIntegralDetail {
 
     export interface UserLoginResDTO{
       user: {
+        isVolunteer?:boolean,
         _id?: string,
         unionId?: string,
         avatar?: string,
