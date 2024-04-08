@@ -91,6 +91,9 @@ export namespace Service {
     export interface GetCreditRecordBySourceIdParam {
       sourceId?: string
     }
+    export interface GetTokenBeforeUserLoginParam {
+      jsCode?: string;
+    }
 
 
     export interface GetMoneyDeductionFromCoinParam {
@@ -593,6 +596,11 @@ export interface UserVolunteerIntegralDetail {
       },
     }
 
+    export interface GetTokenBeforeUserLoginRes{
+      token?: string
+      unionId?: string
+    }
+
     export interface UserExtraInfoDTO{
       unionId?: string
       wxIdentityMap?: any
@@ -905,6 +913,7 @@ export interface UserVolunteerIntegralDetail {
 
     getCreditRecordBySourceId(request:Service.Request.GetCreditRecordBySourceIdParam): Promise<Service.Response.CreditRecordOldStructureResDTO>
 
+    getTokenBeforeUserLogin(request:Service.Request.GetTokenBeforeUserLoginParam): Promise<Service.Response.GetTokenBeforeUserLoginRes>
   }
 
 }
