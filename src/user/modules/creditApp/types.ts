@@ -799,8 +799,6 @@ export interface UserVolunteerIntegralDetail {
     jobUpdateCreditIncomeSubMsg(): Promise<void>
 
     jobSendWillExpireCreditSms(): Promise<void>
-
-    updateCreditIncomeSubMsg(): Promise<void>
   }
 
   export interface FacadeController {
