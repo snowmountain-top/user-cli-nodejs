@@ -87,6 +87,8 @@ export namespace Service {
     export interface GetCreditRecordParam {
       /** unionId */
       unionId?: string
+      page?: number
+      size?: number
     }
     export interface GetCreditRecordBySourceIdParam {
       sourceId?: string
