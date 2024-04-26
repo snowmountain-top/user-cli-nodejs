@@ -1,6 +1,8 @@
 # 更新日志 
 
 
+### [1.1.1](https://github.com/snowmountain-top/user-cli-nodejs/compare/v1.1.0...v1.1.1) (2024-04-26)
+
 ## [1.1.0](https://github.com/snowmountain-top/user-cli-nodejs/compare/v1.0.104...v1.1.0) (2024-04-26)
 
 ### [1.0.104](https://github.com/snowmountain-top/user-cli-nodejs/compare/v1.0.16...v1.0.104) (2024-04-26)
