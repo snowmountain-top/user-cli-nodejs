@@ -249,6 +249,12 @@ export namespace Service {
     export interface UserInfoRecognitionByGptParam {
       ocrContent?: string
     }
+    export interface QueryUserRiskRankParam {
+      appId?: string
+      openId?: string
+      clientIp?: string
+    }
+
     export interface QueryCreditRecordByUnionIdForWebParam {
       unionId : string
       pageIndex : number
@@ -764,10 +770,10 @@ export interface UserVolunteerIntegralDetail {
     getUnionIdByCloudContext(): Promise<Service.Response.GetUnionIdByCloudContextRes>
 
     /**
-     * 校验用户风险等级
-     * @path /user/check-user-risk-rank
+     * 微信接口查询用户风险等级
+     * @path /user/query-user-risk-rank
      */
-    checkUserRiskRank(): Promise<number>
+    queryUserRiskRank(request:Service.Request.QueryUserRiskRankParam): Promise<any>
   }
 
   export interface UserBdController {
