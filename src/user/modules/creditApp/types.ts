@@ -155,6 +155,12 @@ export namespace Service {
       ids?:string[]
     }
 
+    export interface sendWillExpireCreditSmsParam {
+      remainCredit?: number
+      ownerId?:string
+      mobile?: string
+    }
+
     export interface IBusinessDevelopmentStaff {
       id?:number
       unionId?: string
@@ -357,6 +363,12 @@ export namespace Service {
     export interface GetUnionIdByCloudContextRes {
       unionId: string
     }
+    export interface queryUserRiskRankRes {
+      label_list: string[],
+      risk_rank: number,
+      unoin_id: string,
+    }
+
 
     export interface QueryCreditRecordByUnionIdForWebRes {
       _id: string
@@ -393,7 +405,16 @@ export namespace Service {
         isUserMember : boolean
         userMemberValid : string
         credit : number
-        bdInfos: any
+        bdInfos: {
+          name?: string
+          unionId?: string
+          qyUserId?: string
+          isOuter?: boolean
+          isValid?: boolean
+          BU?: string
+          vipGroupId?: string
+          type?: string
+        }
       }[]
       userCount: number
     }
@@ -455,16 +476,16 @@ export namespace Service {
     export interface QueryButlersResDTO{
       total: number
       list: {
-        id : any
+        id : string
         unionId : string
         name : string
         type : string
         qyUserId : string
-        isOuter : any
+        isOuter : boolean
         _createTime : number
         _updateTime : number
-        isValid : any
-        BU : any
+        isValid : boolean
+        BU : string
         vipGroupId : string
         mobile : string
       }[]
@@ -555,7 +576,7 @@ export interface UserVolunteerIntegralDetail {
       tourismInfo?: {
         commonlyTourists?: CommonlyTouristDTO[]
       },
-      role?: any,
+      role?: string,
     }
 
     export interface UserLoginResDTO{
@@ -613,8 +634,8 @@ export interface UserVolunteerIntegralDetail {
 
     export interface UserExtraInfoDTO{
       unionId?: string
-      wxIdentityMap?: any
-      certification?: any
+      wxIdentityMap?: {}
+      certification?: {}
       signInCoiledNum?: number
       coinRemain?: number
       createTime?: number
@@ -773,7 +794,7 @@ export interface UserVolunteerIntegralDetail {
      * 微信接口查询用户风险等级
      * @path /user/query-user-risk-rank
      */
-    queryUserRiskRank(request:Service.Request.QueryUserRiskRankParam): Promise<any>
+    queryUserRiskRank(request:Service.Request.QueryUserRiskRankParam): Promise<Service.Response.queryUserRiskRankRes>
   }
 
   export interface UserBdController {
@@ -784,7 +805,7 @@ export interface UserVolunteerIntegralDetail {
     queryBdRelationInfo(request:Service.Request.QueryBDRelationInfoParam): Promise<Service.Response.UserBDRelationDTO[]>
 
 
-    sendWillExpireCreditSms(request:any):Promise<boolean>
+    sendWillExpireCreditSms(request:Service.Request.sendWillExpireCreditSmsParam):Promise<boolean>
 
     /**
      * 新增bd信息
