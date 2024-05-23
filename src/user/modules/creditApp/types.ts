@@ -98,6 +98,9 @@ export namespace Service {
     export interface GetTokenBeforeUserLoginParam {
       jsCode?: string;
     }
+    export interface getUserDetailForWebParam {
+      unionId: string;
+    }
 
 
     export interface GetMoneyDeductionFromCoinParam {
@@ -417,6 +420,34 @@ export namespace Service {
         }
       }[]
       userCount: number
+    }
+
+    export interface getUserDetailForWebVO {
+      _id : number
+      unionId : string
+      avatar : string
+      nickName : string
+      mobile : string
+      realName : string
+      isDefault : number
+      riskRankLevel : number
+      type : string
+      _createTime : number
+      _updateTime : number
+      birthday : number
+      isUserMember : boolean
+      userMemberValid : string
+      credit : number
+      bdInfos: {
+        name?: string
+        unionId?: string
+        qyUserId?: string
+        isOuter?: boolean
+        isValid?: boolean
+        BU?: string
+        vipGroupId?: string
+        type?: string
+      }
     }
 
     export interface CreditRecordDTO {
@@ -945,6 +976,12 @@ export interface UserVolunteerIntegralDetail {
     getCreditRecordBySourceId(request:Service.Request.GetCreditRecordBySourceIdParam): Promise<Service.Response.CreditRecordOldStructureResDTO>
 
     getTokenBeforeUserLogin(request:Service.Request.GetTokenBeforeUserLoginParam): Promise<Service.Response.GetTokenBeforeUserLoginRes>
+
+    /**
+     * web端获取用户详情
+     * @param request
+     */
+    getUserDetailForWeb(request:Service.Request.getUserDetailForWebParam): Promise<Service.Response.getUserDetailForWebVO>
   }
 
 }
