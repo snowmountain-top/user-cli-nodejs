@@ -21,6 +21,8 @@ export namespace Service {
       title: string
       /** 内容 */
       content: string[]
+      /** 额外信息 */
+      extraInfo?: {}
     }
 
     export interface DeductCreditParam {
@@ -100,6 +102,13 @@ export namespace Service {
     }
     export interface getUserDetailForWebParam {
       unionId: string;
+    }
+    export interface getCreditRecordByStatusParam {
+      /** unionId */
+      unionId?: string
+      page?: number
+      size?: number
+      status: string
     }
 
 
@@ -339,6 +348,13 @@ export namespace Service {
       credit: number
       reduce: number
       reason: string[]
+    }
+    export interface getCreditRecordByStatusVO {
+      title: string
+      content: string
+      credit: number
+      time: string
+      isWxShopOrder: boolean
     }
     export interface CommonlyTouristDTO {
       id: string
@@ -982,6 +998,11 @@ export interface UserVolunteerIntegralDetail {
      * @param request
      */
     getUserDetailForWeb(request:Service.Request.getUserDetailForWebParam): Promise<Service.Response.getUserDetailForWebVO>
+    /**
+     * 根据status获取用户积分记录
+     * @param request
+     */
+    getCreditRecordByStatus(request:Service.Request.getCreditRecordByStatusParam): Promise<Service.Response.getCreditRecordByStatusVO>
   }
 
 }
