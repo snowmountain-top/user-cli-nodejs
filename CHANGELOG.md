@@ -1,6 +1,19 @@
 # 更新日志 
 
 
+### 1.1.5 (2024-07-03)
+
+
+### 📦 Chores | 其他更新
+
+* **release:** 1.0.0 ([548598d](https://github.com/snowmountain-top/user-cli-nodejs/commit/548598d2d4b770e072cd58a30eed184a900aa4dc))
+* **release:** 1.0.1 ([a95dfd3](https://github.com/snowmountain-top/user-cli-nodejs/commit/a95dfd3c29150a3742976ca23f70774e638f18c0))
+* **release:** 1.0.104 ([bb37982](https://github.com/snowmountain-top/user-cli-nodejs/commit/bb379820cdb7a1fec6cc29de88becf818d1ffee3))
+* **release:** 1.0.2 ([6f0f30e](https://github.com/snowmountain-top/user-cli-nodejs/commit/6f0f30e4dc22820628bd21042b9267dfc4980e0c))
+* **release:** 1.1.0 ([3ca5e48](https://github.com/snowmountain-top/user-cli-nodejs/commit/3ca5e489cbb66b4f10b65f9b43815f78186d3823))
+* **release:** 1.1.1 ([5f72247](https://github.com/snowmountain-top/user-cli-nodejs/commit/5f72247f75ba938aa6e51791b80cbbdbf4c4a046))
+* **release:** 1.1.2 ([1002c75](https://github.com/snowmountain-top/user-cli-nodejs/commit/1002c753859f9798429eac34300bf8e7533cde86))
+
 ### 1.1.2 (2024-04-26)
 
 

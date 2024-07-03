@@ -117,7 +117,9 @@ class FacadeService extends BaseService implements Service.FacadeController {
   queryUserListForWeb(request:Service.Request.QueryUserListForWebParam): Promise<Service.Response.QueryUserListForWebVO> {
     return callApi<Service.FacadeController['queryUserListForWeb']>(this.getApiUrl(this.queryUserListForWeb), request)
   }
-
+  isUserMobileCorrect(request: Service.Request.IIsUserMobileCorrect): Promise<Service.Response.IIsUserMobileCorrect> {
+    return callApi<Service.FacadeController['isUserMobileCorrect']>(this.getApiUrl(this.isUserMobileCorrect), request)
+  }
 }
 
 
