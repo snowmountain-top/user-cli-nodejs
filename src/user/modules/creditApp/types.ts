@@ -341,6 +341,10 @@ export namespace Service {
     export interface GetTouristInfoByIdCardParam {
       idCardImageUrl?: string,
     }
+
+    export interface IIsUserMobileCorrect {
+      unionId: string
+    }
   }
 
   export namespace Response {
@@ -736,6 +740,10 @@ export interface UserVolunteerIntegralDetail {
       }
     }
 
+    export interface IIsUserMobileCorrect {
+      isCorrect: boolean
+    }
+
   }
 
   export interface CreditController {
@@ -1003,6 +1011,10 @@ export interface UserVolunteerIntegralDetail {
      * @param request
      */
     getCreditRecordByStatus(request:Service.Request.getCreditRecordByStatusParam): Promise<Service.Response.getCreditRecordByStatusVO>
+    /**
+     * 查询用户手机号是否正确
+     */
+    isUserMobileCorrect(request: Service.Request.IIsUserMobileCorrect): Promise<Service.Response.IIsUserMobileCorrect>
   }
 
 }
