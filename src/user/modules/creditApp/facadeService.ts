@@ -86,7 +86,7 @@ class FacadeService extends BaseService implements Service.FacadeController {
   getUserDetailForWeb(request:Service.Request.getUserDetailForWebParam): Promise<Service.Response.getUserDetailForWebVO> {
     return callApi<Service.FacadeController['getUserDetailForWeb']>(this.getApiUrl(this.getUserDetailForWeb), request)
   }
-  getCreditRecordByStatus(request:Service.Request.getCreditRecordByStatusParam): Promise<Service.Response.getCreditRecordByStatusVO> {
+  getCreditRecordByStatus(request:Service.Request.getCreditRecordByStatusParam): Promise<Service.Response.getCreditRecordByStatusVO[]> {
     return callApi<Service.FacadeController['getCreditRecordByStatus']>(this.getApiUrl(this.getCreditRecordByStatus), request)
   }
 

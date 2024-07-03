@@ -108,7 +108,7 @@ export namespace Service {
       unionId?: string
       page?: number
       size?: number
-      status: string
+      status: USER.Constants.CreditRecordStatusEnum
     }
 
 
@@ -1002,7 +1002,7 @@ export interface UserVolunteerIntegralDetail {
      * 根据status获取用户积分记录
      * @param request
      */
-    getCreditRecordByStatus(request:Service.Request.getCreditRecordByStatusParam): Promise<Service.Response.getCreditRecordByStatusVO>
+    getCreditRecordByStatus(request:Service.Request.getCreditRecordByStatusParam): Promise<Service.Response.getCreditRecordByStatusVO[]>
   }
 
 }
