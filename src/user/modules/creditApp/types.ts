@@ -639,6 +639,7 @@ export interface UserVolunteerIntegralDetail {
 
     export interface UserSpecialIdentityDTO{
       id?: string,
+      image?: string,
       unionId?: string,
       name?: string,
       joinTime?: number,
