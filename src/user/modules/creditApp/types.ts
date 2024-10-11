@@ -636,8 +636,9 @@ export interface UserVolunteerIntegralDetail {
       role?: string,
     }
 
+
     export interface UserSpecialIdentityDTO{
-      _id?: string,
+      id?: string,
       unionId?: string,
       name?: string,
       joinTime?: number,
