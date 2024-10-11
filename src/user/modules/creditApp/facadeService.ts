@@ -3,6 +3,9 @@ import BaseService from '../service'
 import {Service} from "./types";
 
 class FacadeService extends BaseService implements Service.FacadeController {
+  getUserSpecialIdentityByUnionId(request: Service.Request.IGetUserSpecialIdentityByUnionIdParam): Promise<Service.Response.UserSpecialIdentityDTO> {
+    return callApi<Service.FacadeController['getUserSpecialIdentityByUnionId']>(this.getApiUrl(this.getUserSpecialIdentityByUnionId),request)
+  }
   listUserIntegralDetail(request:Service.Request.IUserIntegralDetail): Promise<Service.Response.UserVolunteerIntegralDetail[]>{
     return callApi<Service.FacadeController['listUserIntegralDetail']>(this.getApiUrl(this.listUserIntegralDetail),request)
   }

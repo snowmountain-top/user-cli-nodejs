@@ -294,6 +294,12 @@ export namespace Service {
       unionId : string
     }
 
+    export interface IGetUserSpecialIdentityByUnionIdParam {
+      unionId : string
+      type : string
+    }
+
+
     export interface BindUserMobileDirectlyParam {
       unionId : string
       mobile: string
@@ -628,6 +634,19 @@ export interface UserVolunteerIntegralDetail {
         commonlyTourists?: CommonlyTouristDTO[]
       },
       role?: string,
+    }
+
+    export interface UserSpecialIdentityDTO{
+      _id?: string,
+      unionId?: string,
+      name?: string,
+      joinTime?: number,
+      status?: string,
+      idCard?: string,
+      outTime?: number,
+      type?: string,
+      createdAt?: number,
+      updatedAt?: number,
     }
 
     export interface UserLoginResDTO{
@@ -990,6 +1009,8 @@ export interface UserVolunteerIntegralDetail {
     querySumCreditWillExpire(request:Service.Request.QuerySumCreditWillExpireParam): Promise<number>
 
     getUserInfoByUnionId(request:Service.Request.GetUserInfoByUnionIdParam): Promise<Service.Response.UserResDTO>
+
+    getUserSpecialIdentityByUnionId(request:Service.Request.IGetUserSpecialIdentityByUnionIdParam): Promise<Service.Response.UserSpecialIdentityDTO>
 
     bindUserMobileDirectly(request:Service.Request.BindUserMobileDirectlyParam):Promise<Service.Response.UserResDTO>
 
