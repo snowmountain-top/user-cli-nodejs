@@ -295,7 +295,7 @@ export namespace Service {
     }
 
     export interface IGetUserSpecialIdentityByUnionIdParam {
-      unionId : string
+      unionId : string[]
       type : string
     }
 
@@ -1012,7 +1012,7 @@ export interface UserVolunteerIntegralDetail {
 
     getUserInfoByUnionId(request:Service.Request.GetUserInfoByUnionIdParam): Promise<Service.Response.UserResDTO>
 
-    getUserSpecialIdentityByUnionId(request:Service.Request.IGetUserSpecialIdentityByUnionIdParam): Promise<Service.Response.UserSpecialIdentityDTO>
+    getUserSpecialIdentityByUnionId(request:Service.Request.IGetUserSpecialIdentityByUnionIdParam): Promise<Service.Response.UserSpecialIdentityDTO[]>
 
     bindUserMobileDirectly(request:Service.Request.BindUserMobileDirectlyParam):Promise<Service.Response.UserResDTO>
 
