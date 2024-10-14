@@ -188,6 +188,11 @@ export namespace Service {
       unionId:string
       birthday:number
     }
+
+    export interface IUpdateUserSpecialIdentity {
+      unionId:string
+      idCard:string
+    }
     export interface IUserVolunteerDetail {
       unionId:string
     }
@@ -1011,6 +1016,8 @@ export interface UserVolunteerIntegralDetail {
     querySumCreditWillExpire(request:Service.Request.QuerySumCreditWillExpireParam): Promise<number>
 
     getUserInfoByUnionId(request:Service.Request.GetUserInfoByUnionIdParam): Promise<Service.Response.UserResDTO>
+
+    updateUserSpecialIdentity(request: Service.Request.IUpdateUserSpecialIdentity): Promise<void>
 
     getUserSpecialIdentityByUnionId(request:Service.Request.IGetUserSpecialIdentityByUnionIdParam): Promise<Service.Response.UserSpecialIdentityDTO[]>
 
