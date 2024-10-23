@@ -345,6 +345,15 @@ export namespace Service {
     export interface IIsUserMobileCorrect {
       unionId: string
     }
+
+    export interface insertAppUserOperateRecordParam {
+      pagePath: string
+      enterTime: number
+      exitTime: number
+      duration: number
+      unionId: string
+      pageParams: {}
+    }
   }
 
   export namespace Response {
@@ -1015,6 +1024,12 @@ export interface UserVolunteerIntegralDetail {
      * 查询用户手机号是否正确
      */
     isUserMobileCorrect(request: Service.Request.IIsUserMobileCorrect): Promise<Service.Response.IIsUserMobileCorrect>
+
+    /**
+     * 用户小程序打点
+     */
+    insertAppUserOperateRecord(request: Service.Request.insertAppUserOperateRecordParam): Promise<void>
+
   }
 
 }

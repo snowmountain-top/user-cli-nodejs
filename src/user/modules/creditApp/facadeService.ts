@@ -120,6 +120,9 @@ class FacadeService extends BaseService implements Service.FacadeController {
   isUserMobileCorrect(request: Service.Request.IIsUserMobileCorrect): Promise<Service.Response.IIsUserMobileCorrect> {
     return callApi<Service.FacadeController['isUserMobileCorrect']>(this.getApiUrl(this.isUserMobileCorrect), request)
   }
+  insertAppUserOperateRecord(request: Service.Request.insertAppUserOperateRecordParam): Promise<void> {
+    return callApi<Service.FacadeController['insertAppUserOperateRecord']>(this.getApiUrl(this.insertAppUserOperateRecord), request)
+  }
 }
 
 
