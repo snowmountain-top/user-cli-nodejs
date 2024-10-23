@@ -1058,7 +1058,7 @@ export interface UserVolunteerIntegralDetail {
     /**
      * 用户小程序打点
      */
-    insertAppUserOperateRecord(request: Service.Request.insertAppUserOperateRecordParam): Promise<void>
+    insertAppUserOperateRecord(request: Service.Request.insertAppUserOperateRecordParam[]): Promise<void>
 
   }
 
