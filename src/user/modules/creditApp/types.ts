@@ -364,6 +364,7 @@ export namespace Service {
       duration: number
       unionId: string
       pageParams: {}
+      type: string
     }
   }
 
