@@ -268,9 +268,11 @@ export namespace Service {
 
     export interface UserInfoRecognitionParam {
       imageUrl? : string
+      user?: string
     }
     export interface UserInfoRecognitionByGptParam {
       ocrContent?: string
+      user?: string
     }
     export interface QueryUserRiskRankParam {
       appId?: string
