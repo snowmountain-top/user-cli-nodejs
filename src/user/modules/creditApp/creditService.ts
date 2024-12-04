@@ -32,6 +32,9 @@ class CreditService extends BaseService implements Service.CreditController {
   getCreditReduceByUnionId(request:Service.Request.GetCreditReduceByUnionIdParam): Promise<number> {
     return callApi<Service.CreditController['getCreditReduceByUnionId']>(this.getApiUrl(this.getCreditReduceByUnionId), request)
   }
+  getCustomCreditRecordByUnionId(request:Service.Request.GetCreditReduceByUnionIdParam): Promise<any> {
+    return callApi<Service.CreditController['getCustomCreditRecordByUnionId']>(this.getApiUrl(this.getCustomCreditRecordByUnionId), request)
+  }
 }
 
 

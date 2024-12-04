@@ -316,6 +316,10 @@ export namespace Service {
       unionId : string
     }
 
+    export interface GetCustomCreditRecordByUnionIdParam {
+      unionId : string
+    }
+
     export interface GetMobileFeeCreditRecordFor30DaysParam {
       unionId : string
     }
@@ -834,6 +838,12 @@ export interface UserVolunteerIntegralDetail {
      * @path /credit/get-credit-reduce-by-union-id
      */
     getCreditReduceByUnionId(request:Service.Request.GetCreditReduceByUnionIdParam): Promise<number>
+
+    /**
+     * 查询客服发放积分记录积分
+     * @path /credit/getCustomCreditRecordByUnionId
+     */
+    getCustomCreditRecordByUnionId(request:Service.Request.GetCreditReduceByUnionIdParam): Promise<any>
   }
 
   export interface UserController {
