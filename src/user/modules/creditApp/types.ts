@@ -11,6 +11,8 @@ export namespace Service {
       unionId: string
       /** 工作人员id */
       customUnionId: string
+      /** 工作人员手机号 */
+      phoneNum: string
       /** 状态 */
       status: USER.Constants.CreditRecordStatusEnum
       /** 来源类型 */
