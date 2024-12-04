@@ -19,7 +19,7 @@ class FacadeService extends BaseService implements Service.FacadeController {
   queryAllValidBd(): Promise<Service.Response.UserBDRelationDTO[]> {
     return callApi<Service.FacadeController['queryAllValidBd']>(this.getApiUrl(this.queryAllValidBd))
   }
-  getUserVolunteerDetail(request: Service.Request.IUserBirthdayWeb): Promise<Service.Response.UserVolunteerDetail> {
+  getUserVolunteerDetail(request: Service.Request.IUserVolunteerDetail): Promise<Service.Response.UserVolunteerDetail> {
     return callApi<Service.FacadeController['getUserVolunteerDetail']>(this.getApiUrl(this.getUserVolunteerDetail),request)
   }
   getFollowButlerForMember(request:any): Promise<Service.Response.FollowButlerForMemberDTO> {
