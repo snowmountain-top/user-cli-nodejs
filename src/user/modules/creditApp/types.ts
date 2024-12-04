@@ -9,6 +9,8 @@ export namespace Service {
     export interface AddCreditParam {
       /** 用户id */
       unionId: string
+      /** 工作人员id */
+      customUnionId: string
       /** 状态 */
       status: USER.Constants.CreditRecordStatusEnum
       /** 来源类型 */
