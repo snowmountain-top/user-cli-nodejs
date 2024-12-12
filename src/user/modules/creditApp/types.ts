@@ -260,6 +260,13 @@ export namespace Service {
       mobile? : string
       name? : string
       unionId? : string
+      cardType: string
+      passportInfo: {
+        region: string
+        birthday: string
+        validityDate: string
+        imageUrl: string
+      }
     }
 
     export interface QueryUserByOpenIdParam {
@@ -403,6 +410,13 @@ export namespace Service {
       createTime: number
       updateTime: number
       isNew: boolean
+      cardType: string
+      passportInfo: {
+        region: string
+        birthday: string
+        validityDate: string
+        imageUrl: string
+      }
     }
 
     export interface UserInfoRecognitionRes {
