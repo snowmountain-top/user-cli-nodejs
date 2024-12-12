@@ -250,6 +250,13 @@ export namespace Service {
       mobile? : string
       name? : string
       unionId? : string
+      cardType: string
+      passportInfo: {
+        region: string
+        birthday: string
+        validityDate: string
+        imageUrl: string
+      }
     }
 
     export interface CreateCommonlyTouristParam {
