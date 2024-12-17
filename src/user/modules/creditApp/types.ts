@@ -270,8 +270,8 @@ export namespace Service {
       cardType: string
       passportInfo: {
         region: string
-        birthday: string
-        validityDate: string
+        birthday: number
+        validityDate: number
         imageUrl: string
       }
     }
