@@ -8,6 +8,10 @@ class UserService extends BaseService implements Service.UserController {
   }
   protected prefixUrl: string = '/user'
 
+  mgetUserIdentity(request:Service.Request.mgetUserIdentityParam): Promise<Service.Response.mgetUserIdentityRes> {
+    return callApi<Service.UserController['mgetUserIdentity']>(this.getApiUrl(this.mgetUserIdentity), request)
+  }
+
   listUserBasicInfo(request:Service.Request.ListUserBasicInfoParam): Promise<Service.Response.UserBasicInfoDTO[]> {
     return callApi<Service.UserController['listUserBasicInfo']>(this.getApiUrl(this.listUserBasicInfo), request)
   }

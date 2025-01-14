@@ -280,6 +280,10 @@ export namespace Service {
       openId: string
     }
 
+    export interface mgetUserIdentityParam {
+      unionId: string
+    }
+
     export interface GetFollowButlerForMemberParam {
       unionId : string
     }
@@ -682,6 +686,13 @@ export interface UserVolunteerIntegralDetail {
       role?: string,
     }
 
+    export interface mgetUserIdentityRes{
+      isUserMember: boolean
+      isStaff: boolean
+      isVolunteer: boolean
+      isSuperMember: boolean
+    }
+
 
     export interface UserSpecialIdentityDTO{
       id?: string,
@@ -909,6 +920,8 @@ export interface UserVolunteerIntegralDetail {
     updateUserTouristsInfo(request:Service.Request.UpdateCommonlyTouristParam): Promise<Service.Response.CommonlyTouristDTO[]>
 
     queryUserByOpenId(request:Service.Request.QueryUserByOpenIdParam): Promise<Service.Response.UserResDTO>
+
+    mgetUserIdentity(request:Service.Request.mgetUserIdentityParam): Promise<Service.Response.mgetUserIdentityRes>
 
     createUserTourists(request:Service.Request.CreateCommonlyTouristParam): Promise<Service.Response.CommonlyTouristDTO[]>
 
