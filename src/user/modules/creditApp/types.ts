@@ -27,6 +27,9 @@ export namespace Service {
       content: string[]
       /** 额外信息 */
       extraInfo?: {}
+
+      expireAt?: number
+
     }
 
     export interface DeductCreditParam {
