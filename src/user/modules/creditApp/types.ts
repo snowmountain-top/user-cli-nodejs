@@ -6,6 +6,11 @@ export namespace Service {
     import UserBasicInfoDTO = Service.Response.UserBasicInfoDTO;
     import UserExtraInfoDTO = Service.Response.UserExtraInfoDTO;
 
+    export interface CreditRecordChangeTitleParam {
+      sourceIds: string[]
+      addRecordTitle: string
+      addRecordContent: string[]
+    }
     export interface AddCreditParam {
       /** 用户id */
       unionId: string
@@ -828,6 +833,11 @@ export interface UserVolunteerIntegralDetail {
   }
 
   export interface CreditController {
+    /**
+     * 替换流水描述 软删+新增
+     * @path /credit/batch-update-credit-record-title
+     */
+    batchUpdateCreditRecordTitle(request:Service.Request.CreditRecordChangeTitleParam):Promise<void>
     /**
      * 增加金币
      * @path /credit/add-credit
