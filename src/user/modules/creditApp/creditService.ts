@@ -5,6 +5,9 @@ import BaseService from '../service'
 class CreditService extends BaseService implements Service.CreditController {
   protected prefixUrl: string = '/credit'
 
+  isFirstOrder(request: Service.Request.CheckoutFirstOrderParam): Promise<boolean> {
+    return callApi<Service.CreditController['isFirstOrder']>(this.getApiUrl(this.isFirstOrder),request)
+  }
   batchUpdateCreditRecordTitle(request: Service.Request.CreditRecordChangeTitleParam): Promise<void> {
     return callApi<Service.CreditController['batchUpdateCreditRecordTitle']>(this.getApiUrl(this.batchUpdateCreditRecordTitle),request)
   }
