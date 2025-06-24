@@ -5,7 +5,9 @@ export namespace Service {
 
     import UserBasicInfoDTO = Service.Response.UserBasicInfoDTO;
     import UserExtraInfoDTO = Service.Response.UserExtraInfoDTO;
-
+    export interface CheckoutFirstOrderParam {
+      unionId : string
+    }
     export interface CreditRecordChangeTitleParam {
       sourceIds: string[]
       // 查需要更改记录
@@ -837,6 +839,7 @@ export interface UserVolunteerIntegralDetail {
   }
 
   export interface CreditController {
+    isFirstOrder(request:Service.Request.CheckoutFirstOrderParam):Promise<boolean>
     /**
      * 替换流水描述 软删+新增
      * @path /credit/batch-update-credit-record-title
