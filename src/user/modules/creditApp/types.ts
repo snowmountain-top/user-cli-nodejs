@@ -8,7 +8,10 @@ export namespace Service {
 
     export interface CreditRecordChangeTitleParam {
       sourceIds: string[]
+      // 查需要更改记录
       sourceType: string
+      // 更改记录对应的type
+      addSourceType: string
       addRecordTitle: string
       addRecordContent: string[]
     }
