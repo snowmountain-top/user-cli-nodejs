@@ -1006,6 +1006,8 @@ export interface UserVolunteerIntegralDetail {
   }
 
   export interface FacadeController {
+    isFirstOrder(request:Service.Request.CheckoutFirstOrderParam):Promise<boolean>
+
     listUserIntegralDetail(request:Service.Request.IUserIntegralDetail): Promise<Service.Response.UserVolunteerIntegralDetail[]>
 
     getUserVolunteerDetail(request:Service.Request.IUserVolunteerDetail): Promise<Service.Response.UserVolunteerDetail>

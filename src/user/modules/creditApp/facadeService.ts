@@ -3,6 +3,9 @@ import BaseService from '../service'
 import {Service} from "./types";
 
 class FacadeService extends BaseService implements Service.FacadeController {
+  isFirstOrder(request: Service.Request.CheckoutFirstOrderParam): Promise<boolean> {
+    return callApi<Service.CreditController['isFirstOrder']>(this.getApiUrl(this.isFirstOrder),request)
+  }
   getUserSpecialIdentityByUnionId(request: Service.Request.IGetUserSpecialIdentityByUnionIdParam): Promise<Service.Response.UserSpecialIdentityDTO[]> {
     return callApi<Service.FacadeController['getUserSpecialIdentityByUnionId']>(this.getApiUrl(this.getUserSpecialIdentityByUnionId),request)
   }
