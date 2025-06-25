@@ -19,7 +19,6 @@ export namespace Service {
       // 更改记录对应的type
       addSourceType: string
       addRecordTitle: string
-      addRecordContent: string[]
     }
     export interface AddCreditParam {
       /** 用户id */
