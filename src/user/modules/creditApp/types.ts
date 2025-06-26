@@ -851,7 +851,7 @@ export interface UserVolunteerIntegralDetail {
      * 检查用户首单权益
      * @path /credit/is-first-order
      */
-    isFirstOrder(request:Service.Request.CheckoutFirstOrderParam):Promise<boolean>
+    hasFirstOrder(request:Service.Request.CheckoutFirstOrderParam):Promise<boolean>
     /**
      * 替换流水描述 软删+新增
      * @path /credit/batch-update-credit-record-title
@@ -1006,7 +1006,7 @@ export interface UserVolunteerIntegralDetail {
   }
 
   export interface FacadeController {
-    isFirstOrder(request:Service.Request.CheckoutFirstOrderParam):Promise<boolean>
+    hasFirstOrder(request:Service.Request.CheckoutFirstOrderParam):Promise<boolean>
 
     listUserIntegralDetail(request:Service.Request.IUserIntegralDetail): Promise<Service.Response.UserVolunteerIntegralDetail[]>
 

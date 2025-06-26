@@ -8,8 +8,8 @@ class CreditService extends BaseService implements Service.CreditController {
   checkMainOrderIsFirst(request: Service.Request.CheckoutAdjustmentFirstOrderParam): Promise<boolean> {
     return callApi<Service.CreditController['checkMainOrderIsFirst']>(this.getApiUrl(this.checkMainOrderIsFirst),request)
   }
-  isFirstOrder(request: Service.Request.CheckoutFirstOrderParam): Promise<boolean> {
-    return callApi<Service.CreditController['isFirstOrder']>(this.getApiUrl(this.isFirstOrder),request)
+  hasFirstOrder(request: Service.Request.CheckoutFirstOrderParam): Promise<boolean> {
+    return callApi<Service.CreditController['hasFirstOrder']>(this.getApiUrl(this.hasFirstOrder),request)
   }
   batchUpdateCreditRecordTitle(request: Service.Request.CreditRecordChangeTitleParam): Promise<void> {
     return callApi<Service.CreditController['batchUpdateCreditRecordTitle']>(this.getApiUrl(this.batchUpdateCreditRecordTitle),request)
