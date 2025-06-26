@@ -1,6 +1,6 @@
 {
   "name": "@be-link/user-cli-nodejs",
-  "version": "1.1.49",
+  "version": "1.1.50",
   "description": "用户服务Nodejs客户端",
   "main": "index.js",
   "scripts": {
