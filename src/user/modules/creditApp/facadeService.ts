@@ -3,6 +3,9 @@ import BaseService from '../service'
 import {Service} from "./types";
 
 class FacadeService extends BaseService implements Service.FacadeController {
+  checkMainOrderIsFirst(request: Service.Request.CheckoutAdjustmentFirstOrderParam): Promise<boolean> {
+    return callApi<Service.CreditController['checkMainOrderIsFirst']>(this.getApiUrl(this.checkMainOrderIsFirst),request)
+  }
   hasFirstOrder(request: Service.Request.CheckoutFirstOrderParam): Promise<boolean> {
     return callApi<Service.CreditController['hasFirstOrder']>(this.getApiUrl(this.hasFirstOrder),request)
   }
