@@ -5,6 +5,9 @@ export namespace Service {
 
     import UserBasicInfoDTO = Service.Response.UserBasicInfoDTO;
     import UserExtraInfoDTO = Service.Response.UserExtraInfoDTO;
+    export interface checkOrderHasChangeSourceTypeCanGrantParam {
+      sourceId : string
+    }
     export interface CheckoutAdjustmentFirstOrderParam {
       unionId : string
       mainOrderId: string
@@ -842,6 +845,7 @@ export interface UserVolunteerIntegralDetail {
   }
 
   export interface CreditController {
+    checkOrderHasChangeSourceTypeCanGrant(request:Service.Request.checkOrderHasChangeSourceTypeCanGrantParam):Promise<boolean>
     /**
      * 为差价单检查主单是否是首单
      * @path /credit/check-main-order-is-first
