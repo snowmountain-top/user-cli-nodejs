@@ -5,6 +5,11 @@ export namespace Service {
 
     import UserBasicInfoDTO = Service.Response.UserBasicInfoDTO;
     import UserExtraInfoDTO = Service.Response.UserExtraInfoDTO;
+
+    export interface checkReviewCanGrantParam {
+      unionId : string
+      orderId: string
+    }
     export interface checkOrderHasChangeSourceTypeCanGrantParam {
       sourceId : string
     }
@@ -845,6 +850,7 @@ export interface UserVolunteerIntegralDetail {
   }
 
   export interface CreditController {
+    checkReviewCanGrant(request:Service.Request.checkReviewCanGrantParam):Promise<boolean>
     checkOrderHasChangeSourceTypeCanGrant(request:Service.Request.checkOrderHasChangeSourceTypeCanGrantParam):Promise<boolean>
     /**
      * 为差价单检查主单是否是首单
