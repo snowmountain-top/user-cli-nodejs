@@ -4,6 +4,9 @@ import BaseService from '../service'
 
 class CreditService extends BaseService implements Service.CreditController {
   protected prefixUrl: string = '/credit'
+  checkReviewCanGrant(request:Service.Request.checkReviewCanGrantParam):Promise<boolean> {
+    return callApi<Service.CreditController['checkReviewCanGrant']>(this.getApiUrl(this.checkReviewCanGrant),request)
+  }
   checkOrderHasChangeSourceTypeCanGrant(request:Service.Request.checkOrderHasChangeSourceTypeCanGrantParam):Promise<boolean> {
     return callApi<Service.CreditController['checkOrderHasChangeSourceTypeCanGrant']>(this.getApiUrl(this.checkOrderHasChangeSourceTypeCanGrant),request)
   }
