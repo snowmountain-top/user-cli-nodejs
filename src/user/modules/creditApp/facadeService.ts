@@ -3,11 +3,17 @@ import BaseService from '../service'
 import {Service} from "./types";
 
 class FacadeService extends BaseService implements Service.FacadeController {
+  getCreditRecordByUnionIdAndOrderId(request: Service.Request.getCreditRecordByUnionIdAndOrderIdParam): Promise<Service.Response.CreditRecordOldStructureResDTO>{
+    return callApi<Service.FacadeController['getCreditRecordByUnionIdAndOrderId']>(this.getApiUrl(this.getCreditRecordByUnionIdAndOrderId),request)
+  }
+  checkReviewCanGrant(request: Service.Request.checkReviewCanGrantParam): Promise<boolean> {
+    return callApi<Service.FacadeController['checkReviewCanGrant']>(this.getApiUrl(this.checkReviewCanGrant),request)
+  }
   checkMainOrderIsFirst(request: Service.Request.CheckoutAdjustmentFirstOrderParam): Promise<boolean> {
-    return callApi<Service.CreditController['checkMainOrderIsFirst']>(this.getApiUrl(this.checkMainOrderIsFirst),request)
+    return callApi<Service.FacadeController['checkMainOrderIsFirst']>(this.getApiUrl(this.checkMainOrderIsFirst),request)
   }
   hasFirstOrder(request: Service.Request.CheckoutFirstOrderParam): Promise<boolean> {
-    return callApi<Service.CreditController['hasFirstOrder']>(this.getApiUrl(this.hasFirstOrder),request)
+    return callApi<Service.FacadeController['hasFirstOrder']>(this.getApiUrl(this.hasFirstOrder),request)
   }
   getUserSpecialIdentityByUnionId(request: Service.Request.IGetUserSpecialIdentityByUnionIdParam): Promise<Service.Response.UserSpecialIdentityDTO[]> {
     return callApi<Service.FacadeController['getUserSpecialIdentityByUnionId']>(this.getApiUrl(this.getUserSpecialIdentityByUnionId),request)

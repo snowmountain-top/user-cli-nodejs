@@ -5,7 +5,10 @@ export namespace Service {
 
     import UserBasicInfoDTO = Service.Response.UserBasicInfoDTO;
     import UserExtraInfoDTO = Service.Response.UserExtraInfoDTO;
-
+    export interface getCreditRecordByUnionIdAndOrderIdParam {
+      unionId : string
+      orderId: string
+    }
     export interface checkReviewCanGrantParam {
       unionId : string
       orderId: string
@@ -1016,6 +1019,8 @@ export interface UserVolunteerIntegralDetail {
   }
 
   export interface FacadeController {
+    getCreditRecordByUnionIdAndOrderId(request: Service.Request.getCreditRecordByUnionIdAndOrderIdParam): Promise<Service.Response.CreditRecordOldStructureResDTO>
+    checkReviewCanGrant(request:Service.Request.checkReviewCanGrantParam):Promise<boolean>
     checkMainOrderIsFirst(request:Service.Request.CheckoutAdjustmentFirstOrderParam):Promise<boolean>
 
     hasFirstOrder(request:Service.Request.CheckoutFirstOrderParam):Promise<boolean>
