@@ -7,7 +7,7 @@ export namespace Service {
     import UserExtraInfoDTO = Service.Response.UserExtraInfoDTO;
     export interface getCreditRecordByUnionIdAndOrderIdParam {
       unionId : string
-      orderId: string
+      orderId?: string
     }
     export interface checkReviewCanGrantParam {
       unionId : string
