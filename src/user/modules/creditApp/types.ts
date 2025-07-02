@@ -866,10 +866,14 @@ export interface UserVolunteerIntegralDetail {
      */
     hasFirstOrder(request:Service.Request.CheckoutFirstOrderParam):Promise<boolean>
     /**
+     *待废弃
+     */
+    batchUpdateCreditRecordTitle(request:Service.Request.CreditRecordChangeTitleParam):Promise<void>
+    /**
      * 替换流水描述 软删+新增
      * @path /credit/batch-update-credit-record-title
      */
-    batchUpdateCreditRecordTitle(request:Service.Request.CreditRecordChangeTitleParam):Promise<void>
+    batchReplaceCreditRecords(request:Service.Request.CreditRecordChangeTitleParam):Promise<void>
     /**
      * 增加金币
      * @path /credit/add-credit

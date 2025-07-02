@@ -19,6 +19,9 @@ class CreditService extends BaseService implements Service.CreditController {
   batchUpdateCreditRecordTitle(request: Service.Request.CreditRecordChangeTitleParam): Promise<void> {
     return callApi<Service.CreditController['batchUpdateCreditRecordTitle']>(this.getApiUrl(this.batchUpdateCreditRecordTitle),request)
   }
+  batchReplaceCreditRecords(request: Service.Request.CreditRecordChangeTitleParam): Promise<void> {
+    return callApi<Service.CreditController['batchReplaceCreditRecords']>(this.getApiUrl(this.batchReplaceCreditRecords),request)
+  }
   addCredit(request:Service.Request.AddCreditParam): Promise<string> {
     return callApi<Service.CreditController['addCredit']>(this.getApiUrl(this.addCredit), request)
   }
