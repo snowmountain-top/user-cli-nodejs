@@ -356,6 +356,9 @@ export namespace Service {
       type : string
     }
 
+    export interface queryUserByMobileParam {
+      mobiles : string[]
+    }
 
     export interface BindUserMobileDirectlyParam {
       unionId : string
@@ -850,6 +853,10 @@ export interface UserVolunteerIntegralDetail {
       isCorrect: boolean
     }
 
+    export interface QueryUserByMobileRes {
+      mobile: string,
+      unionId: string,
+    }
   }
 
   export interface CreditController {
@@ -1166,6 +1173,10 @@ export interface UserVolunteerIntegralDetail {
      */
     insertAppUserOperateRecord(request: Service.Request.insertAppUserOperateRecordParam[]): Promise<void>
 
+    /**
+     * 查询通过用户手机号
+     */
+    queryUserByMobile(request: Service.Request.queryUserByMobileParam): Promise<Service.Response.QueryUserByMobileRes[]>
   }
 
 }
