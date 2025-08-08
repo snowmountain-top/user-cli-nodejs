@@ -142,6 +142,9 @@ class FacadeService extends BaseService implements Service.FacadeController {
   insertAppUserOperateRecord(request: Service.Request.insertAppUserOperateRecordParam[]): Promise<void> {
     return callApi<Service.FacadeController['insertAppUserOperateRecord']>(this.getApiUrl(this.insertAppUserOperateRecord), request)
   }
+  queryUserByMobile(request: Service.Request.queryUserByMobileParam): Promise<Service.Response.QueryUserByMobileRes[]> {
+    return callApi<Service.FacadeController['queryUserByMobile']>(this.getApiUrl(this.queryUserByMobile), request)
+  }
 }
 
 
