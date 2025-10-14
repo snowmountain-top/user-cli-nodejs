@@ -9,8 +9,8 @@ export default abstract class BaseService {
   protected readonly natDevHost = 'http://qgostaxv.user-service.nmkh74o4.rlwzae9d.com:8090'
   protected readonly natProdHost = 'http://bxbvjnca.user-service.cwl9ok0a.mk2u3r3l.com:8090'
   /** 公网域名 */
-  protected readonly publicDevHost = 'https://user-service-74680-5-1304510571.sh.run.tcloudbase.com'
-  protected readonly publicProdHost = 'https://user-service-60660-10-1304510571.sh.run.tcloudbase.com'
+  protected readonly publicDevHost = 'https://user-service-dev.wejourney.top'
+  protected readonly publicProdHost = 'https://user-service.wejourney.top'
 
   constructor() {
     /** 如果是云函数环境, 默认走公网访问 */
