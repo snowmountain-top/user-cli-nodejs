@@ -5,6 +5,9 @@ export namespace Service {
 
     import UserBasicInfoDTO = Service.Response.UserBasicInfoDTO;
     import UserExtraInfoDTO = Service.Response.UserExtraInfoDTO;
+    export interface getUserVolunteerByUnionIdParam {
+      unionId: string
+    }
     export interface getCreditRecordByUnionIdAndOrderIdParam {
       unionId : string
       orderId?: string
@@ -857,6 +860,20 @@ export interface UserVolunteerIntegralDetail {
       mobile: string,
       unionId: string,
     }
+
+    export interface UserVolunteer {
+      id: string
+      unionId: string
+      name: string
+      phone: string
+      achievement: string
+      joinTime: number
+      groupInfo: string
+      bdName: string
+      status: string
+      createdAt: number
+      updatedAt: number
+    }
   }
 
   export interface CreditController {
@@ -992,6 +1009,8 @@ export interface UserVolunteerIntegralDetail {
      * @path /user/query-user-risk-rank
      */
     queryUserRiskRank(request:Service.Request.QueryUserRiskRankParam): Promise<Service.Response.queryUserRiskRankRes>
+
+    getUserVolunteerByUnionId(request:Service.Request.getUserVolunteerByUnionIdParam): Promise<Service.Response.UserVolunteer>
   }
 
   export interface UserBdController {
