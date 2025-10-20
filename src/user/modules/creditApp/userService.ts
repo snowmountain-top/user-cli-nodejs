@@ -49,9 +49,6 @@ class UserService extends BaseService implements Service.UserController {
   updateUserTouristsInfo(request:Service.Request.UpdateCommonlyTouristParam): Promise<Service.Response.CommonlyTouristDTO[]> {
     return callApi<Service.UserController['updateUserTouristsInfo']>(this.getApiUrl(this.updateUserTouristsInfo), request)
   }
-  getUserVolunteerByUnionId(request:Service.Request.getUserVolunteerByUnionIdParam): Promise<Service.Response.UserVolunteer> {
-    return callApi<Service.UserController['getUserVolunteerByUnionId']>(this.getApiUrl(this.getUserVolunteerByUnionId), request)
-  }
 }
 
 
